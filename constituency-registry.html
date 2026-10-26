@@ -1,0 +1,4881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Registry Book - Youth Parliament Ghana</title>
+
+<style>
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --ypg-green: #0b5d3b;
+    --ypg-green-dark: #08462e;
+    --gold: #d4af37;
+    --blue: #2563eb;
+    --orange: #f59e0b;
+    --red: #dc2626;
+    --purple: #7c3aed;
+
+    --dark: #17221c;
+    --text: #222;
+    --muted: #667085;
+    --light: #f5f7f6;
+    --white: #ffffff;
+    --border: #dfe3e8;
+
+    --radius: 12px;
+
+    --shadow-sm:
+        0 2px 8px rgba(16, 24, 40, 0.06);
+
+    --shadow-md:
+        0 8px 25px rgba(16, 24, 40, 0.10);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--light);
+    color: var(--text);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    background: var(--white);
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   WATERMARK
+========================================================= */
+
+.watermark-logo {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 550px;
+    height: 550px;
+
+    transform:
+        translate(-50%, -50%);
+
+    object-fit: contain;
+
+    opacity: 0.055;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.page-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 35px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+/* =========================================================
+   CENTER HEADER
+========================================================= */
+
+.header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    text-align: center;
+
+    padding-bottom: 25px;
+
+    border-bottom: 3px solid var(--ypg-green);
+
+    margin-bottom: 25px;
+}
+
+
+.header-left {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    text-align: left;
+}
+
+
+.top-logo {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+
+.header-text h1 {
+    color: var(--ypg-green);
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    margin-bottom: 6px;
+}
+
+
+.header-text h2 {
+    color: var(--dark);
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+
+.header-text p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+@media (max-width: 600px) {
+
+    .header {
+        justify-content: center;
+
+        text-align: center;
+
+        padding-bottom: 18px;
+
+        margin-bottom: 18px;
+    }
+
+    .header-left {
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 8px;
+
+        text-align: center;
+
+        width: 100%;
+    }
+
+    .top-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 20px;
+    }
+
+    .header-text h2 {
+        font-size: 14px;
+    }
+
+    .header-text p {
+        font-size: 11px;
+    }
+
+}
+
+/* =========================================================
+   LIVE BADGE
+========================================================= */
+
+.live-badge {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border-radius: 30px;
+
+    background: #eef8f2;
+
+    color: var(--ypg-green);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   LIVE DOT
+========================================================= */
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #16a34a;
+
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .live-badge {
+        position: static;
+
+        transform: none;
+
+        margin-top: 10px;
+
+        padding: 6px 10px;
+
+        font-size: 9px;
+
+        gap: 5px;
+    }
+
+    .live-dot {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.controls {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+
+.search-box {
+    flex: 1;
+
+    min-width: 280px;
+}
+
+
+.search-box input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+
+.search-box input:focus {
+    border-color:
+        var(--ypg-green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(11, 93, 59, 0.08);
+}
+
+
+.buttons {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.action-btn {
+    border: none;
+
+    padding: 12px 17px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+
+.refresh-btn {
+    background: #f1f3f5;
+
+    color: #333;
+}
+
+
+.refresh-btn:hover {
+    background: #e4e7eb;
+}
+
+
+.print-btn {
+    background: var(--ypg-green);
+
+    color: white;
+}
+
+
+.print-btn:hover {
+    background: var(--ypg-green-dark);
+}
+
+
+/* =========================================================
+   DASHBOARD INTRO
+========================================================= */
+
+.dashboard-intro {
+    margin-bottom: 18px;
+}
+
+
+.dashboard-intro h3 {
+    color: var(--dark);
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+
+.dashboard-intro p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   LAST GENERATED — SMALL RIGHT SIDE
+========================================================= */
+
+.last-generated {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+
+    width: 100%;
+
+    margin-bottom: 12px;
+
+    text-align: right;
+}
+
+.last-generated-label {
+    display: inline-block;
+
+    color: #9ca3af;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    margin: 0;
+}
+
+.last-generated-date {
+    display: inline-block;
+
+    color: #4b5563;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   DASHBOARD STATS GRID
+========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.stat-card {
+    display: block;
+
+    width: 100%;
+
+    min-height: 150px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    appearance: none;
+
+    border:
+        1px solid var(--border);
+
+    background: var(--white);
+
+    border-radius: 0;
+
+    padding: 18px;
+
+    box-shadow: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    text-align: left;
+}
+
+
+.stat-card:link,
+.stat-card:visited {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+.stat-card:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 15px
+        rgba(16, 24, 40, 0.08);
+
+    text-decoration: none;
+}
+
+
+.stat-card:active {
+    transform: translateY(0);
+}
+
+
+.stat-card:focus-visible {
+    outline:
+        3px solid
+        rgba(11, 93, 59, 0.20);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   CARD TOP BORDERS
+========================================================= */
+
+.stat-all {
+    border-top:
+        4px solid var(--ypg-green);
+}
+
+
+.stat-regions {
+    border-top:
+        4px solid #1677b9;
+}
+
+
+.stat-total {
+    border-top:
+        4px solid var(--purple);
+}
+
+
+.stat-recorded {
+    border-top:
+        4px solid var(--ypg-green);
+}
+
+
+.stat-vacant {
+    border-top:
+        4px solid var(--orange);
+}
+
+
+.stat-revoked {
+    border-top:
+        4px solid var(--ypg-green);
+}
+
+
+/* =========================================================
+   STAT ICON
+========================================================= */
+
+.stat-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+
+.stat-all .stat-icon {
+    background: #e8f7f0;
+
+    color: var(--ypg-green);
+}
+
+
+.stat-regions .stat-icon {
+    background: #edf6fc;
+
+    color: #1677b9;
+}
+
+
+.stat-total .stat-icon {
+    background: #f4ecfb;
+
+    color: var(--purple);
+}
+
+
+.stat-recorded .stat-icon {
+    background: #e8f7f0;
+
+    color: var(--ypg-green);
+}
+
+
+.stat-vacant .stat-icon {
+    background: #fff7e8;
+
+    color: #b45309;
+}
+
+
+.stat-revoked .stat-icon {
+    background: #f1f3f5;
+
+    color: #344054;
+}
+
+
+/* =========================================================
+   STAT LABEL
+========================================================= */
+
+.stat-label {
+    display: block;
+
+    font-size: 13px;
+
+    color: #4b5563;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   STAT NUMBER
+========================================================= */
+
+.stat-number {
+    display: block;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    font-weight: 850;
+
+    color: var(--dark);
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   STAT NOTE
+========================================================= */
+
+.stat-note {
+    display: block;
+
+    margin-top: 0;
+
+    font-size: 13px;
+
+    color: #667085;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   REGISTRY HEADER
+========================================================= */
+
+.registry-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 12px;
+
+    padding-bottom: 12px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.registry-title h3 {
+    color: var(--dark);
+
+    font-size: 18px;
+
+    margin-bottom: 3px;
+}
+
+
+.registry-title p {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.registry-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px 16px;
+
+    background: #ffffff;
+
+    color: var(--ypg-green);
+
+    border:
+        1px solid var(--ypg-green);
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        all 0.2s ease;
+}
+
+
+.registry-link:hover {
+    background: var(--ypg-green);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 5px 15px
+        rgba(11, 93, 59, 0.15);
+}
+
+
+.registry-link:visited {
+    color: var(--ypg-green);
+}
+
+
+.registry-link:hover:visited {
+    color: white;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: white;
+}
+
+
+table {
+    width: 100%;
+
+    min-width: 1100px;
+
+    border-collapse:
+        collapse;
+}
+
+
+thead th {
+    background:
+        var(--ypg-green);
+
+    color: white;
+
+    padding: 13px 11px;
+
+    font-size: 12px;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+}
+
+
+tbody td {
+    padding: 12px 11px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+
+tbody tr:nth-child(even) {
+    background: #fafcfb;
+}
+
+
+tbody tr:hover {
+    background: #f0f7f3;
+}
+
+
+.number {
+    text-align: center;
+
+    font-weight: 700;
+
+    color: var(--muted);
+
+    width: 65px;
+}
+
+
+.name {
+    font-weight: 800;
+
+    color: var(--ypg-green);
+
+    min-width: 220px;
+}
+
+
+.phone {
+    white-space: nowrap;
+}
+
+
+.position {
+    min-width: 180px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+    display: inline-block;
+
+    padding: 6px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.status-recorded {
+    color: #067647;
+
+    background: #ecfdf3;
+}
+
+
+.status-vacant {
+    color: #b54708;
+
+    background: #fffaeb;
+}
+
+
+.status-revoked {
+    color: #b42318;
+
+    background: #fef3f2;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty {
+    display: none;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    margin-top: 25px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid var(--border);
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    body {
+        padding: 0;
+    }
+
+
+    .page-container {
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+
+    .page-content {
+        padding: 20px 15px;
+    }
+
+
+    .header {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .header-left {
+        flex-direction: column;
+    }
+
+
+    .top-logo {
+        width: 80px;
+
+        height: 80px;
+    }
+
+
+    .header-text h1 {
+        font-size: 22px;
+    }
+
+
+    .header-text h2 {
+        font-size: 15px;
+    }
+
+
+    .controls {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .search-box {
+        min-width: 100%;
+    }
+
+
+    .buttons {
+        width: 100%;
+    }
+
+
+    .action-btn,
+    .back-btn,
+    .constituency-btn {
+        flex: 1;
+    }
+
+
+    .registry-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .registry-link {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .page-content {
+        padding: 18px 10px;
+    }
+
+
+    /* ================================================
+       LAST GENERATED
+    ================================================ */
+
+    .last-generated {
+        margin-bottom: 18px;
+    }
+
+
+    .last-generated-label {
+        font-size: 11px;
+
+        letter-spacing: 0.9px;
+    }
+
+
+    .last-generated-date {
+        font-size: 19px;
+    }
+
+
+    /* ================================================
+       TWO COLUMN DASHBOARD
+       KEEP TWO COLUMNS ON MOBILE
+    ================================================ */
+
+    .stats-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        margin-bottom: 22px;
+    }
+
+
+    /* ================================================
+       STAT CARD
+    ================================================ */
+
+    .stat-card {
+        min-height: 205px;
+
+        padding: 16px 14px;
+
+        border-radius: 0;
+    }
+
+
+    /* ================================================
+       ICON
+    ================================================ */
+
+    .stat-icon {
+        width: 48px;
+
+        height: 48px;
+
+        font-size: 12px;
+
+        border-radius: 11px;
+
+        margin-bottom: 12px;
+    }
+
+
+    /* ================================================
+       LABEL
+    ================================================ */
+
+    .stat-label {
+        font-size: 11px;
+
+        line-height: 1.25;
+
+        margin-bottom: 14px;
+    }
+
+
+    /* ================================================
+       NUMBER
+    ================================================ */
+
+    .stat-number {
+        font-size: 38px;
+
+        line-height: 1;
+
+        margin-bottom: 13px;
+    }
+
+
+    /* ================================================
+       NOTE
+    ================================================ */
+
+    .stat-note {
+        font-size: 12px;
+
+        line-height: 1.35;
+    }
+
+
+    /* ================================================
+       INTRO
+    ================================================ */
+
+    .dashboard-intro {
+        margin-bottom: 15px;
+    }
+
+
+    .dashboard-intro h3 {
+        font-size: 17px;
+    }
+
+
+    .dashboard-intro p {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+
+    /* ================================================
+       HEADER
+    ================================================ */
+
+    .header {
+        padding-bottom: 18px;
+
+        margin-bottom: 18px;
+    }
+
+
+    /* ================================================
+       SEARCH
+    ================================================ */
+
+    .search-box input {
+        padding: 13px;
+
+        font-size: 13px;
+    }
+
+
+    /* ================================================
+       BUTTONS
+    ================================================ */
+
+    .buttons {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 7px;
+    }
+
+
+    .action-btn,
+    .back-btn,
+    .constituency-btn {
+        width: 100%;
+
+        padding: 11px 7px;
+
+        font-size: 11px;
+    }
+
+
+    /* ================================================
+       REGISTRY HEADER
+    ================================================ */
+
+    .registry-header {
+        margin-bottom: 10px;
+    }
+
+
+    .registry-title h3 {
+        font-size: 16px;
+    }
+
+
+    .registry-title p {
+        font-size: 11px;
+
+        line-height: 1.4;
+    }
+
+
+    /* ================================================
+       TABLE
+    ================================================ */
+
+    .table-container {
+        border-radius: 6px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    /*
+       IMPORTANT:
+       KEEP TWO COLUMNS.
+       Do NOT change this to 1fr.
+    */
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+
+    .stat-card {
+        min-height: 185px;
+
+        padding: 13px 11px;
+    }
+
+
+    .stat-icon {
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 11px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .stat-label {
+        font-size: 9px;
+
+        line-height: 1.2;
+
+        margin-bottom: 11px;
+    }
+
+
+    .stat-number {
+        font-size: 31px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .stat-note {
+        font-size: 10px;
+
+        line-height: 1.3;
+    }
+
+
+    .last-generated-label {
+        font-size: 10px;
+    }
+
+
+    .last-generated-date {
+        font-size: 18px;
+    }
+
+
+    .page-content {
+        padding-left: 8px;
+
+        padding-right: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    @page {
+        size: landscape;
+
+        margin: 10mm;
+    }
+
+
+    body {
+        background: white;
+
+        padding: 0;
+    }
+
+
+    .page-container {
+        width: 100%;
+
+        max-width: none;
+
+        box-shadow: none;
+    }
+
+
+    .page-content {
+        padding: 0;
+    }
+
+
+    .controls,
+    .registry-link,
+    .live-badge {
+        display: none !important;
+    }
+
+
+    .stat-card {
+        box-shadow: none;
+    }
+
+
+    table {
+        min-width: 100%;
+    }
+
+
+    thead th {
+        background:
+            var(--ypg-green) !important;
+
+        color: white !important;
+
+        print-color-adjust: exact;
+
+        -webkit-print-color-adjust:
+            exact;
+    }
+
+
+    .status {
+        print-color-adjust: exact;
+
+        -webkit-print-color-adjust:
+            exact;
+    }
+
+
+    .watermark-logo {
+        opacity: 0.035;
+    }
+
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+========================================================= */
+
+.constituency-btn,
+.back-btn {
+
+    height: 44px;
+
+    padding: 0 16px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+}
+
+
+/* =========================================================
+   CONSTITUENCY BUTTON
+========================================================= */
+
+.constituency-btn {
+
+    border:
+        1px solid #7043a6;
+
+    background: #f5effb;
+
+    color: #7043a6;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-btn {
+
+    border:
+        1px solid #d5dcd8;
+
+    background: #ffffff;
+
+    color: #526059;
+}
+
+
+/* =========================================================
+   NAVIGATION HOVER
+========================================================= */
+
+.constituency-btn:hover,
+.back-btn:hover {
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   NAVIGATION ICON
+========================================================= */
+
+.constituency-btn span,
+.back-btn span {
+
+    font-size: 14px;
+
+    margin-right: 2px;
+}
+
+.registry-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.registry-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 11px 16px;
+
+    border: 1px solid #0b5d3b;
+    border-radius: 8px;
+
+    background: #0b5d3b;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.registry-action-btn:hover {
+    background: #08462e;
+    transform: translateY(-1px);
+}
+
+.registry-action-btn span {
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+
+    .registry-actions {
+        width: 100%;
+    }
+
+    .registry-action-btn {
+        width: 100%;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page-container">
+
+    <!-- WATERMARK -->
+
+    <img
+        src="YPG-LOGO.webp"
+        class="watermark-logo"
+        alt=""
+    >
+
+
+    <div class="page-content">
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="header">
+
+            <div class="header-left">
+
+                <img
+                    src="YPG-LOGO.webp"
+                    class="top-logo"
+                    alt="Youth Parliament Ghana Logo"
+                >
+
+
+                <div class="header-text">
+
+                    <h1>
+                        Youth Parliament Ghana
+                    </h1>
+
+                    <h2>
+                        Registered Members of Parliament
+                    </h2>
+
+                    <p>
+                        Official Active Members Directory
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="live-badge">
+
+                <span class="live-dot"></span>
+
+                LIVE REGISTRY
+
+            </div>
+
+        </header>
+        <div class="registry-actions">
+
+    <button
+        type="button"
+        class="registry-action-btn"
+        onclick="openVacancyPage()"
+    >
+        <span>▣</span>
+        Vacant Constituencies
+    </button>
+
+</div>
+
+
+
+        <!-- =====================================================
+             CONTROLS
+        ====================================================== -->
+
+        <div class="controls">
+
+            <div class="search-box">
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search constituency, region, MP name, phone or status..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="buttons">
+
+                <!-- BACK -->
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="goBack()"
+                >
+                    <span>←</span>
+                    Back
+                </button>
+
+
+                <!-- REFRESH -->
+
+                <button
+                    type="button"
+                    class="action-btn refresh-btn"
+                    onclick="loadMembers()"
+                >
+                    Refresh
+                </button>
+
+
+                <!-- PRINT -->
+
+                <button
+                    type="button"
+                    class="action-btn print-btn"
+                    onclick="printPDF()"
+                >
+                    Print
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             INTRO
+        ====================================================== -->
+
+        <div class="dashboard-intro">
+
+            <h3>
+                Parliamentary Registration Dashboard
+            </h3>
+
+            <p>
+                View registered, vacant and revoked parliamentary
+                positions across Ghana's 276 constituencies.
+            </p>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             LAST GENERATED
+        ====================================================== -->
+
+        <div class="last-generated">
+
+            <span class="last-generated-label">
+                LAST GENERATED
+            </span>
+
+            <span
+                class="last-generated-date"
+                id="mobileGeneratedDate"
+            >
+                -
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             DASHBOARD CARDS
+        ====================================================== -->
+
+        <div class="stats-grid">
+
+
+            <!-- =================================================
+                 TOTAL MP POSITIONS
+            ================================================== -->
+
+            <a
+                href="print-mps.html"
+                class="stat-card stat-all"
+            >
+
+                <span class="stat-icon">
+                    MP
+                </span>
+
+
+                <span class="stat-label">
+                    Total MP Positions
+                </span>
+
+
+                <span
+                    class="stat-number"
+                    id="totalMPPositions"
+                >
+                    276
+                </span>
+
+
+                <span class="stat-note">
+                    National Parliamentary Seats
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 REGIONS
+            ================================================== -->
+
+            <a
+                href="print-mps.html"
+                class="stat-card stat-regions"
+            >
+
+                <span class="stat-icon">
+                    RG
+                </span>
+
+
+                <span class="stat-label">
+                    Regions
+                </span>
+
+
+                <span
+                    class="stat-number"
+                    id="totalRegions"
+                >
+                    16
+                </span>
+
+
+                <span class="stat-note">
+                    Administrative Regions
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 CONSTITUENCIES
+            ================================================== -->
+
+            <a
+                href="constituency-registry.html"
+                class="stat-card stat-total"
+            >
+
+                <span class="stat-icon">
+                    CT
+                </span>
+
+
+                <span class="stat-label">
+                    Constituencies
+                </span>
+
+
+                <span
+                    class="stat-number"
+                    id="totalConstituencies"
+                >
+                    276
+                </span>
+
+
+                <span class="stat-note">
+                    Parliamentary Constituencies
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 RECORDED
+            ================================================== -->
+
+            <a
+                href="constituency-registry.html?status=recorded"
+                class="stat-card stat-recorded"
+            >
+
+                <span class="stat-icon">
+                    ✓
+                </span>
+
+
+                <span class="stat-label">
+                    Recorded
+                </span>
+
+
+                <span
+                    class="stat-number"
+                    id="recordedPositions"
+                >
+                    0
+                </span>
+
+
+                <span class="stat-note">
+                    Registered YPG MPs
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 VACANT
+            ================================================== -->
+
+            <a
+                href="constituency-registry.html?status=vacant"
+                class="stat-card stat-vacant"
+            >
+
+                <span class="stat-icon">
+                    VC
+                </span>
+
+
+                <span class="stat-label">
+                    Vacant
+                </span>
+
+
+                <span
+                    class="stat-number"
+                    id="vacantPositions"
+                >
+                    0
+                </span>
+
+
+                <span class="stat-note">
+                    Positions Awaiting Registration
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 REVOKED
+            ================================================== -->
+
+            <a
+                href="constituency-registry.html?status=revoked"
+                class="stat-card stat-revoked"
+            >
+
+                <span class="stat-icon">
+                    RV
+                </span>
+
+
+                <span class="stat-label">
+                    Revoked
+                </span>
+
+
+                <span
+                    class="stat-number"
+                    id="revokedPositions"
+                >
+                    0
+                </span>
+
+
+                <span class="stat-note">
+                    Revoked MP Records
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             REGISTRY HEADER
+        ====================================================== -->
+
+        <div class="registry-header">
+
+            <div class="registry-title">
+
+                <h3>
+                    Current Parliamentary Records
+                </h3>
+
+                <p>
+                    Records are matched against the official
+                    constituency universe.
+                </p>
+
+            </div>
+
+
+            <a
+                href="constituency-registry.html"
+                class="registry-link"
+            >
+                Open Constituency Registry
+            </a>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             TABLE
+        ====================================================== -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            No.
+                        </th>
+
+                        <th>
+                            Constituency
+                        </th>
+
+                        <th>
+                            Region
+                        </th>
+
+                        <th>
+                            MP / Recorded Member
+                        </th>
+
+                        <th>
+                            Phone Number
+                        </th>
+
+                        <th>
+                            Position
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="membersTableBody"
+                ></tbody>
+
+            </table>
+
+
+            <div
+                class="empty"
+                id="emptyState"
+            >
+                No records found.
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer class="footer">
+
+            Youth Parliament Ghana —
+            Official Members Directory
+
+            <br>
+
+            This document contains registered
+            parliamentary records.
+
+            <br>
+
+            Generated:
+            <span id="generatedDate">
+                -
+            </span>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     DATA FILES
+========================================================= -->
+
+<script src="js/constituency-data.js"></script>
+<script src="js/mp-data.js"></script>
+
+
+<script>
+/* =========================================================
+   YOUTH PARLIAMENT GHANA
+   PARLIAMENTARY CONSTITUENCY REGISTRY
+   OPTIMIZED REGISTRY CONTROLLER
+   ========================================================= */
+
+
+/* =========================================================
+   CONSTANTS
+========================================================= */
+
+const TOTAL_MP_POSITIONS = 276;
+const TOTAL_REGIONS = 16;
+const TOTAL_CONSTITUENCIES = 276;
+
+
+/* =========================================================
+   DATA STATE
+========================================================= */
+
+let allMPs = [];
+
+let activeMPs = [];
+
+let validActiveMPs = [];
+
+let invalidActiveMPs = [];
+
+let revokedMPs = [];
+
+let vacantPositions = [];
+
+let displayedPositions = [];
+
+let allPositions = [];
+
+let currentSearchTerm = "";
+
+
+/* =========================================================
+   INDEXES
+========================================================= */
+
+/*
+ * These maps are built ONCE.
+ *
+ * This is the main performance improvement.
+ */
+
+let officialConstituencyMap = new Map();
+
+let officialConstituencyRegionMap = new Map();
+
+let validMPByConstituency = new Map();
+
+let validMPByConstituencyRegion = new Map();
+
+let revokedMPByConstituency = new Map();
+
+let recordedConstituencySet = new Set();
+
+let searchCache = new Map();
+
+
+/* =========================================================
+   INITIALIZATION STATE
+========================================================= */
+
+let registryInitialized = false;
+
+
+/* =========================================================
+   GET CONSTITUENCY DATA
+========================================================= */
+
+function getConstituencyData() {
+
+    /*
+     * Supports:
+     *
+     * window.constituencyData
+     *
+     * and a normal global:
+     *
+     * constituencyData
+     */
+
+    try {
+
+        if (
+            typeof window.constituencyData !== "undefined" &&
+            Array.isArray(window.constituencyData)
+        ) {
+
+            return window.constituencyData;
+
+        }
+
+    } catch (error) {
+        /* Ignore and continue */
+    }
+
+
+    try {
+
+        if (
+            typeof constituencyData !== "undefined" &&
+            Array.isArray(constituencyData)
+        ) {
+
+            return constituencyData;
+
+        }
+
+    } catch (error) {
+        /* Ignore and continue */
+    }
+
+
+    return [];
+
+}
+
+
+/* =========================================================
+   GET OFFICIAL CONSTITUENCY UNIVERSE
+========================================================= */
+
+function getConstituencyUniverse() {
+
+    const data = getConstituencyData();
+
+    if (!Array.isArray(data)) {
+
+        return [];
+
+    }
+
+
+    return data.filter(function(item) {
+
+        return (
+            item &&
+            typeof item === "object" &&
+            item.constituency
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   NORMALIZE GENERAL TEXT
+========================================================= */
+
+function normalizeName(value) {
+
+    return String(value || "")
+
+        .normalize("NFKD")
+
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+
+        .trim()
+
+        .toLowerCase()
+
+        .replace(
+            /[–—−-]/g,
+            " "
+        )
+
+        .replace(
+            /[^\w\s]/g,
+            " "
+        )
+
+        .replace(
+            /\s+/g,
+            " "
+        )
+
+        .trim();
+
+}
+
+
+/* =========================================================
+   NORMALIZE STATUS
+========================================================= */
+
+function normalizeStatus(value) {
+
+    return String(value || "")
+
+        .trim()
+
+        .toLowerCase();
+
+}
+
+
+/* =========================================================
+   NORMALIZE REGION
+========================================================= */
+
+function normalizeRegion(value) {
+
+    return String(value || "")
+
+        .normalize("NFKD")
+
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+
+        .trim()
+
+        .toLowerCase()
+
+        .replace(
+            /[–—−-]/g,
+            " "
+        )
+
+        .replace(
+            /[^\w\s]/g,
+            " "
+        )
+
+        .replace(
+            /\s+/g,
+            " "
+        )
+
+        .trim();
+
+}
+
+
+/* =========================================================
+   NORMALIZE CONSTITUENCY
+========================================================= */
+
+/*
+ * Examples accepted:
+ *
+ * Ayawaso West
+ * AYAWASO WEST
+ * Ayawaso West Constituency
+ * Ayawaso West-Wuogon
+ * Ayawaso West/Wuogon
+ * Bortianor-Ngleshie Amanfro
+ * Bortianor Ngleshie Amanfro
+ */
+
+function normalizeConstituencyName(value) {
+
+    return String(value ?? "")
+
+        .normalize("NFKD")
+
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+
+        .trim()
+
+        .toLowerCase()
+
+        /*
+         * Remove constituency wording.
+         */
+        .replace(
+            /\b(constituency|constituencies)\b/g,
+            " "
+        )
+
+        /*
+         * Treat separators as spaces.
+         */
+        .replace(
+            /[–—−\-\/\\_]+/g,
+            " "
+        )
+
+        /*
+         * Remove punctuation.
+         */
+        .replace(
+            /[^a-z0-9\s]/g,
+            " "
+        )
+
+        /*
+         * Normalize spaces.
+         */
+        .replace(
+            /\s+/g,
+            " "
+        )
+
+        .trim();
+
+}
+
+
+/* =========================================================
+   CONSTITUENCY ALIASES
+========================================================= */
+
+const CONSTITUENCY_ALIASES = {
+
+    /*
+     * Ayawaso West is commonly supplied without
+     * the official "Wuogon" wording.
+     */
+
+    "ayawaso west":
+        "ayawaso west wuogon",
+
+    "ayawaso west wuogon":
+        "ayawaso west wuogon"
+
+};
+
+
+/* =========================================================
+   CANONICAL CONSTITUENCY
+========================================================= */
+
+function canonicalConstituency(value) {
+
+    const normalized =
+        normalizeConstituencyName(value);
+
+    if (!normalized) {
+
+        return "";
+
+    }
+
+
+    return (
+        CONSTITUENCY_ALIASES[normalized] ||
+        normalized
+    );
+
+}
+
+
+/* =========================================================
+   CONSTITUENCY NAME MATCH
+========================================================= */
+
+function constituencyNamesMatch(
+    name1,
+    name2
+) {
+
+    const first =
+        canonicalConstituency(name1);
+
+    const second =
+        canonicalConstituency(name2);
+
+
+    if (
+        !first ||
+        !second
+    ) {
+
+        return false;
+
+    }
+
+
+    return first === second;
+
+}
+
+
+/* =========================================================
+   BUILD OFFICIAL CONSTITUENCY INDEX
+========================================================= */
+
+/*
+ * This runs ONCE.
+ *
+ * Before:
+ *
+ * Every MP searched through all 276 constituencies.
+ *
+ * Now:
+ *
+ * Map lookup.
+ */
+
+function buildOfficialConstituencyIndex() {
+
+    officialConstituencyMap =
+        new Map();
+
+    officialConstituencyRegionMap =
+        new Map();
+
+
+    const universe =
+        getConstituencyUniverse();
+
+
+    universe.forEach(function(item) {
+
+        if (
+            !item ||
+            !item.constituency
+        ) {
+
+            return;
+
+        }
+
+
+        const constituency =
+            canonicalConstituency(
+                item.constituency
+            );
+
+
+        if (!constituency) {
+
+            return;
+
+        }
+
+
+        const region =
+            normalizeRegion(
+                item.region
+            );
+
+
+        /*
+         * Store the first official entry.
+         */
+        if (
+            !officialConstituencyMap.has(
+                constituency
+            )
+        ) {
+
+            officialConstituencyMap.set(
+                constituency,
+                item
+            );
+
+        }
+
+
+        /*
+         * Region-specific key.
+         */
+        const regionKey =
+            constituency +
+            "|" +
+            region;
+
+
+        if (
+            !officialConstituencyRegionMap.has(
+                regionKey
+            )
+        ) {
+
+            officialConstituencyRegionMap.set(
+                regionKey,
+                item
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   GET OFFICIAL CONSTITUENCY FOR MP
+========================================================= */
+
+function getOfficialConstituencyForMP(mp) {
+
+    if (!mp) {
+
+        return null;
+
+    }
+
+
+    const constituency =
+        canonicalConstituency(
+            mp.constituency
+        );
+
+
+    if (!constituency) {
+
+        return null;
+
+    }
+
+
+    const region =
+        normalizeRegion(
+            mp.region
+        );
+
+
+    /*
+     * Prefer constituency + region.
+     */
+
+    if (region) {
+
+        const regionKey =
+            constituency +
+            "|" +
+            region;
+
+
+        const regionMatch =
+            officialConstituencyRegionMap.get(
+                regionKey
+            );
+
+
+        if (regionMatch) {
+
+            return regionMatch;
+
+        }
+
+    }
+
+
+    /*
+     * Then try constituency alone.
+     */
+
+    const match =
+        officialConstituencyMap.get(
+            constituency
+        );
+
+
+    return match || null;
+
+}
+
+
+/* =========================================================
+   VALIDATE ACTIVE MP
+========================================================= */
+
+function isValidConstituencyMP(mp) {
+
+    if (!mp) {
+
+        return false;
+
+    }
+
+
+    /*
+     * Only ACTIVE records can occupy
+     * a constituency.
+     */
+
+    if (
+        normalizeStatus(mp.status) !==
+        "active"
+    ) {
+
+        return false;
+
+    }
+
+
+    return (
+        getOfficialConstituencyForMP(mp) !==
+        null
+    );
+
+}
+
+
+/* =========================================================
+   BUILD MP INDEX
+========================================================= */
+
+/*
+ * This is another major performance improvement.
+ *
+ * Instead of filtering all MPs every time,
+ * MPs are indexed once.
+ */
+
+function buildMPIndexes() {
+
+    validMPByConstituency =
+        new Map();
+
+    validMPByConstituencyRegion =
+        new Map();
+
+    revokedMPByConstituency =
+        new Map();
+
+    recordedConstituencySet =
+        new Set();
+
+
+    /*
+     * VALID ACTIVE MPs
+     */
+
+    validActiveMPs.forEach(function(mp) {
+
+        const official =
+            getOfficialConstituencyForMP(
+                mp
+            );
+
+
+        if (!official) {
+
+            return;
+
+        }
+
+
+        const constituency =
+            canonicalConstituency(
+                official.constituency
+            );
+
+
+        const region =
+            normalizeRegion(
+                official.region ||
+                mp.region
+            );
+
+
+        if (!constituency) {
+
+            return;
+
+        }
+
+
+        /*
+         * Constituency-only index.
+         *
+         * Keep first valid MP if duplicates exist.
+         */
+
+        if (
+            !validMPByConstituency.has(
+                constituency
+            )
+        ) {
+
+            validMPByConstituency.set(
+                constituency,
+                mp
+            );
+
+        }
+
+
+        /*
+         * Constituency + region index.
+         */
+
+        const regionKey =
+            constituency +
+            "|" +
+            region;
+
+
+        if (
+            !validMPByConstituencyRegion.has(
+                regionKey
+            )
+        ) {
+
+            validMPByConstituencyRegion.set(
+                regionKey,
+                mp
+            );
+
+        }
+
+
+        /*
+         * Recorded constituency.
+         */
+
+        recordedConstituencySet.add(
+            constituency
+        );
+
+    });
+
+
+    /*
+     * REVOKED INDEX
+     */
+
+    revokedMPs.forEach(function(mp) {
+
+        const constituency =
+            canonicalConstituency(
+                mp.constituency
+            );
+
+
+        if (!constituency) {
+
+            return;
+
+        }
+
+
+        if (
+            !revokedMPByConstituency.has(
+                constituency
+            )
+        ) {
+
+            revokedMPByConstituency.set(
+                constituency,
+                mp
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   FIND ACTIVE MEMBER
+========================================================= */
+
+function findActiveMember(
+    constituency,
+    region
+) {
+
+    const target =
+        canonicalConstituency(
+            constituency
+        );
+
+
+    if (!target) {
+
+        return null;
+
+    }
+
+
+    const targetRegion =
+        normalizeRegion(
+            region
+        );
+
+
+    /*
+     * Try constituency + region first.
+     */
+
+    if (targetRegion) {
+
+        const regionKey =
+            target +
+            "|" +
+            targetRegion;
+
+
+        const regionMatch =
+            validMPByConstituencyRegion.get(
+                regionKey
+            );
+
+
+        if (regionMatch) {
+
+            return regionMatch;
+
+        }
+
+    }
+
+
+    /*
+     * Then constituency alone.
+     */
+
+    return (
+        validMPByConstituency.get(
+            target
+        ) ||
+        null
+    );
+
+}
+
+
+/* =========================================================
+   OLD FUNCTION NAME COMPATIBILITY
+========================================================= */
+
+function findActiveMP(
+    constituency,
+    region
+) {
+
+    return findActiveMember(
+        constituency,
+        region
+    );
+
+}
+
+
+/* =========================================================
+   FIND REVOKED MEMBER
+========================================================= */
+
+function findRevokedMember(
+    constituency,
+    region
+) {
+
+    const target =
+        canonicalConstituency(
+            constituency
+        );
+
+
+    if (!target) {
+
+        return null;
+
+    }
+
+
+    const revoked =
+        revokedMPByConstituency.get(
+            target
+        );
+
+
+    if (!revoked) {
+
+        return null;
+
+    }
+
+
+    /*
+     * If region was supplied, check it.
+     */
+
+    if (region) {
+
+        const targetRegion =
+            normalizeRegion(
+                region
+            );
+
+        const revokedRegion =
+            normalizeRegion(
+                revoked.region
+            );
+
+
+        if (
+            targetRegion &&
+            revokedRegion &&
+            targetRegion !== revokedRegion
+        ) {
+
+            return null;
+
+        }
+
+    }
+
+
+    return revoked;
+
+}
+
+
+/* =========================================================
+   OLD FUNCTION NAME COMPATIBILITY
+========================================================= */
+
+function findRevokedMP(
+    constituency,
+    region
+) {
+
+    return findRevokedMember(
+        constituency,
+        region
+    );
+
+}
+
+
+/* =========================================================
+   FIND MEMBER
+========================================================= */
+
+function findMember(
+    constituency,
+    region
+) {
+
+    const activeMember =
+        findActiveMember(
+            constituency,
+            region
+        );
+
+
+    if (activeMember) {
+
+        return activeMember;
+
+    }
+
+
+    return findRevokedMember(
+        constituency,
+        region
+    );
+
+}
+
+
+/* =========================================================
+   GET VALID ACTIVE MPs
+========================================================= */
+
+function getValidActiveMPs() {
+
+    return validActiveMPs;
+
+}
+
+
+/* =========================================================
+   GET INVALID ACTIVE MPs
+========================================================= */
+
+function getInvalidActiveMPs() {
+
+    return invalidActiveMPs;
+
+}
+
+
+/* =========================================================
+   GET RECORDED CONSTITUENCY SET
+========================================================= */
+
+function getRecordedConstituencySet() {
+
+    /*
+     * Return a new Set so outside code cannot
+     * accidentally modify the internal index.
+     */
+
+    return new Set(
+        recordedConstituencySet
+    );
+
+}
+
+
+/* =========================================================
+   GET RECORDED CONSTITUENCIES
+========================================================= */
+
+function getRecordedConstituencies() {
+
+    return getRecordedConstituencySet();
+
+}
+
+
+/* =========================================================
+   BUILD VACANCIES
+========================================================= */
+
+function getVacantPositions() {
+
+    const universe =
+        getConstituencyUniverse();
+
+
+    return universe.filter(
+        function(position) {
+
+            const key =
+                canonicalConstituency(
+                    position.constituency
+                );
+
+
+            return (
+                key &&
+                !recordedConstituencySet.has(
+                    key
+                )
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   VACANCY COUNT
+========================================================= */
+
+function vacancyCountFromUniverse(
+    universe
+) {
+
+    if (
+        !Array.isArray(universe)
+    ) {
+
+        return 0;
+
+    }
+
+
+    let count = 0;
+
+
+    universe.forEach(function(item) {
+
+        if (
+            !item ||
+            !item.constituency
+        ) {
+
+            return;
+
+        }
+
+
+        const key =
+            canonicalConstituency(
+                item.constituency
+            );
+
+
+        if (
+            key &&
+            !recordedConstituencySet.has(
+                key
+            )
+        ) {
+
+            count++;
+
+        }
+
+    });
+
+
+    return count;
+
+}
+
+
+/* =========================================================
+   BUILD POSITION LIST
+========================================================= */
+
+/*
+ * IMPORTANT:
+ *
+ * The official constituency registry controls
+ * the table.
+ *
+ * Therefore:
+ *
+ * - All official constituencies are displayed.
+ * - Valid active MP = RECORDED.
+ * - No valid active MP = VACANT.
+ * - Invalid active MP = does NOT occupy seat.
+ * - Revoked MP = does NOT occupy seat.
+ *
+ * Official order is preserved.
+ */
+
+function buildPositionList() {
+
+    const universe =
+        getConstituencyUniverse();
+
+
+    if (
+        !Array.isArray(universe) ||
+        universe.length === 0
+    ) {
+
+        return [];
+
+    }
+
+
+    const rows = [];
+
+
+    universe.forEach(
+        function(position, index) {
+
+            if (
+                !position ||
+                !position.constituency
+            ) {
+
+                return;
+
+            }
+
+
+            const officialNumber =
+                String(index + 1)
+                    .padStart(3, "0");
+
+
+            /*
+             * Find valid active MP.
+             *
+             * This is now a MAP lookup.
+             */
+
+            const activeMP =
+                findActiveMember(
+                    position.constituency,
+                    position.region
+                );
+
+
+            /* =================================================
+               RECORDED
+            ================================================= */
+
+            if (activeMP) {
+
+                rows.push({
+
+                    officialNumber:
+                        officialNumber,
+
+                    id:
+                        activeMP.id ||
+                        "-",
+
+                    constituency:
+                        position.constituency,
+
+                    region:
+                        position.region ||
+                        activeMP.region ||
+                        "-",
+
+                    name:
+                        activeMP.name ||
+                        "-",
+
+                    phone:
+                        activeMP.phone ||
+                        activeMP.phoneNumber ||
+                        "-",
+
+                    position:
+                        activeMP.position ||
+                        "Member of Parliament",
+
+                    status:
+                        "recorded",
+
+                    originalStatus:
+                        "active"
+
+                });
+
+
+                return;
+
+            }
+
+
+            /* =================================================
+               VACANT
+            ================================================= */
+
+            rows.push({
+
+                officialNumber:
+                    officialNumber,
+
+                id:
+                    "-",
+
+                constituency:
+                    position.constituency,
+
+                region:
+                    position.region ||
+                    "-",
+
+                name:
+                    "VACANT POSITION",
+
+                phone:
+                    "-",
+
+                position:
+                    "Member of Parliament",
+
+                status:
+                    "vacant",
+
+                originalStatus:
+                    "vacant"
+
+            });
+
+        }
+    );
+
+
+    return rows;
+
+}
+
+
+/* =========================================================
+   BUILD SEARCH CACHE
+========================================================= */
+
+/*
+ * Search text is generated only ONCE per row.
+ *
+ * Searching no longer rebuilds the entire registry.
+ */
+
+function buildSearchCache() {
+
+    searchCache =
+        new Map();
+
+
+    allPositions.forEach(function(item) {
+
+        const text = [
+
+            item.officialNumber,
+
+            item.id,
+
+            item.name,
+
+            item.phone,
+
+            item.constituency,
+
+            item.region,
+
+            item.position,
+
+            item.status
+
+        ]
+
+        .map(function(value) {
+
+            return normalizeName(
+                value
+            );
+
+        })
+
+        .join(" ");
+
+
+        searchCache.set(
+            item,
+            text
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   UPDATE DASHBOARD
+========================================================= */
+
+function updateDashboard() {
+
+    const recordedCount =
+        recordedConstituencySet.size;
+
+
+    const vacantCount =
+        Math.max(
+            TOTAL_CONSTITUENCIES -
+            recordedCount,
+            0
+        );
+
+
+    /*
+     * TOTAL MP POSITIONS
+     */
+
+    const totalMPElement =
+        document.getElementById(
+            "totalMPPositions"
+        );
+
+
+    if (totalMPElement) {
+
+        totalMPElement.textContent =
+            TOTAL_MP_POSITIONS;
+
+    }
+
+
+    /*
+     * TOTAL REGIONS
+     */
+
+    const totalRegionsElement =
+        document.getElementById(
+            "totalRegions"
+        );
+
+
+    if (totalRegionsElement) {
+
+        totalRegionsElement.textContent =
+            TOTAL_REGIONS;
+
+    }
+
+
+    /*
+     * TOTAL CONSTITUENCIES
+     */
+
+    const totalConstituenciesElement =
+        document.getElementById(
+            "totalConstituencies"
+        );
+
+
+    if (totalConstituenciesElement) {
+
+        totalConstituenciesElement.textContent =
+            TOTAL_CONSTITUENCIES;
+
+    }
+
+
+    /*
+     * RECORDED
+     */
+
+    const recordedElement =
+        document.getElementById(
+            "recordedPositions"
+        );
+
+
+    if (recordedElement) {
+
+        recordedElement.textContent =
+            recordedCount;
+
+    }
+
+
+    /*
+     * VACANT
+     */
+
+    const vacantElement =
+        document.getElementById(
+            "vacantPositions"
+        );
+
+
+    if (vacantElement) {
+
+        vacantElement.textContent =
+            vacantCount;
+
+    }
+
+
+    /*
+     * REVOKED
+     */
+
+    const revokedElement =
+        document.getElementById(
+            "revokedPositions"
+        );
+
+
+    if (revokedElement) {
+
+        revokedElement.textContent =
+            revokedMPs.length;
+
+    }
+
+}
+
+
+/* =========================================================
+   REFRESH DASHBOARD
+========================================================= */
+
+function refreshMPDashboard() {
+
+    loadMembers();
+
+}
+
+
+/* =========================================================
+   RENDER TABLE
+========================================================= */
+
+function renderTable(
+    positions
+) {
+
+    const tableBody =
+        document.getElementById(
+            "membersTableBody"
+        );
+
+    const emptyState =
+        document.getElementById(
+            "emptyState"
+        );
+
+
+    if (!tableBody) {
+
+        return;
+
+    }
+
+
+    /*
+     * Clear old rows.
+     */
+
+    tableBody.innerHTML = "";
+
+
+    const displayPositions =
+        Array.isArray(positions)
+            ? positions
+            : [];
+
+
+    /*
+     * Nothing found.
+     */
+
+    if (
+        displayPositions.length === 0
+    ) {
+
+        if (emptyState) {
+
+            emptyState.style.display =
+                "block";
+
+            emptyState.textContent =
+                "No constituency records found.";
+
+        }
+
+        return;
+
+    }
+
+
+    /*
+     * Hide empty message.
+     */
+
+    if (emptyState) {
+
+        emptyState.style.display =
+            "none";
+
+    }
+
+
+    /*
+     * IMPORTANT:
+     *
+     * DocumentFragment prevents repeated
+     * DOM reflows.
+     */
+
+    const fragment =
+        document.createDocumentFragment();
+
+
+    displayPositions.forEach(
+        function(item) {
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            /* =============================================
+               NUMBER
+            ============================================= */
+
+            const numberCell =
+                document.createElement(
+                    "td"
+                );
+
+            numberCell.className =
+                "number";
+
+            numberCell.textContent =
+                item.officialNumber || "-";
+
+            row.appendChild(
+                numberCell
+            );
+
+
+            /* =============================================
+               CONSTITUENCY
+            ============================================= */
+
+            const constituencyCell =
+                document.createElement(
+                    "td"
+                );
+
+            constituencyCell.textContent =
+                item.constituency || "-";
+
+            row.appendChild(
+                constituencyCell
+            );
+
+
+            /* =============================================
+               REGION
+            ============================================= */
+
+            const regionCell =
+                document.createElement(
+                    "td"
+                );
+
+            regionCell.textContent =
+                item.region || "-";
+
+            row.appendChild(
+                regionCell
+            );
+
+
+            /* =============================================
+               NAME
+            ============================================= */
+
+            const nameCell =
+                document.createElement(
+                    "td"
+                );
+
+            nameCell.className =
+                "name";
+
+
+            if (
+                item.status ===
+                "vacant"
+            ) {
+
+                nameCell.textContent =
+                    "VACANT POSITION";
+
+            }
+
+            else {
+
+                nameCell.textContent =
+                    String(
+                        item.name || "-"
+                    ).toUpperCase();
+
+            }
+
+
+            row.appendChild(
+                nameCell
+            );
+
+
+            /* =============================================
+               PHONE
+            ============================================= */
+
+            const phoneCell =
+                document.createElement(
+                    "td"
+                );
+
+            phoneCell.className =
+                "phone";
+
+
+            phoneCell.textContent =
+                item.status === "vacant"
+                    ? "-"
+                    : (
+                        item.phone ||
+                        "-"
+                    );
+
+
+            row.appendChild(
+                phoneCell
+            );
+
+
+            /* =============================================
+               POSITION
+            ============================================= */
+
+            const positionCell =
+                document.createElement(
+                    "td"
+                );
+
+            positionCell.className =
+                "position";
+
+            positionCell.textContent =
+                item.position ||
+                "Member of Parliament";
+
+            row.appendChild(
+                positionCell
+            );
+
+
+            /* =============================================
+               STATUS
+            ============================================= */
+
+            const statusCell =
+                document.createElement(
+                    "td"
+                );
+
+
+            const badge =
+                document.createElement(
+                    "span"
+                );
+
+
+            badge.className =
+                "status";
+
+
+            if (
+                item.status ===
+                "recorded"
+            ) {
+
+                badge.classList.add(
+                    "status-recorded"
+                );
+
+                badge.textContent =
+                    "RECORDED";
+
+            }
+
+            else if (
+                item.status ===
+                "vacant"
+            ) {
+
+                badge.classList.add(
+                    "status-vacant"
+                );
+
+                badge.textContent =
+                    "VACANT";
+
+            }
+
+            else {
+
+                badge.classList.add(
+                    "status-revoked"
+                );
+
+                badge.textContent =
+                    String(
+                        item.status ||
+                        "UNKNOWN"
+                    ).toUpperCase();
+
+            }
+
+
+            statusCell.appendChild(
+                badge
+            );
+
+            row.appendChild(
+                statusCell
+            );
+
+
+            /*
+             * Add row to fragment.
+             */
+
+            fragment.appendChild(
+                row
+            );
+
+        }
+    );
+
+
+    /*
+     * Add everything at once.
+     */
+
+    tableBody.appendChild(
+        fragment
+    );
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+/*
+ * IMPORTANT:
+ *
+ * This does NOT call buildPositionList().
+ *
+ * It searches the already-created 276 rows.
+ *
+ * This is what prevents the page from freezing.
+ */
+
+function searchMembers() {
+
+    const input =
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    if (!input) {
+
+        return;
+
+    }
+
+
+    const searchTerm =
+        normalizeName(
+            input.value
+        );
+
+
+    currentSearchTerm =
+        searchTerm;
+
+
+    /*
+     * Empty search:
+     * show all 276 official positions.
+     */
+
+    if (!searchTerm) {
+
+        displayedPositions =
+            allPositions;
+
+        renderTable(
+            displayedPositions
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * If user searches:
+     *
+     * constituency
+     *
+     * show the full constituency list.
+     */
+
+    if (
+        searchTerm ===
+            "constituency" ||
+
+        searchTerm ===
+            "constituencies"
+    ) {
+
+        displayedPositions =
+            allPositions;
+
+        renderTable(
+            displayedPositions
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * Canonical constituency search.
+     *
+     * Example:
+     *
+     * Ayawaso West constituency
+     *
+     * becomes:
+     *
+     * ayawaso west
+     *
+     * and is mapped to:
+     *
+     * ayawaso west wuogon
+     */
+
+    const canonicalSearch =
+        canonicalConstituency(
+            searchTerm
+        );
+
+
+    /*
+     * Filter the already-built rows.
+     */
+
+    displayedPositions =
+        allPositions.filter(
+            function(item) {
+
+                const cachedText =
+                    searchCache.get(
+                        item
+                    ) || "";
+
+
+                /*
+                 * Normal text search.
+                 */
+
+                if (
+                    cachedText.includes(
+                        searchTerm
+                    )
+                ) {
+
+                    return true;
+
+                }
+
+
+                /*
+                 * Exact canonical constituency
+                 * comparison.
+                 */
+
+                if (
+                    canonicalSearch &&
+                    canonicalConstituency(
+                        item.constituency
+                    ) ===
+                    canonicalSearch
+                ) {
+
+                    return true;
+
+                }
+
+
+                return false;
+
+            }
+        );
+
+
+    renderTable(
+        displayedPositions
+    );
+
+}
+
+
+/* =========================================================
+   CLEAR SEARCH
+========================================================= */
+
+function clearSearch() {
+
+    const input =
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    if (input) {
+
+        input.value = "";
+
+    }
+
+
+    currentSearchTerm =
+        "";
+
+
+    displayedPositions =
+        allPositions;
+
+
+    renderTable(
+        displayedPositions
+    );
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+function printPDF() {
+
+    window.print();
+
+}
+
+
+/* =========================================================
+   GENERATED DATE
+========================================================= */
+function updateGeneratedDate() {
+
+    const now = new Date();
+
+    const formatted = now.toLocaleDateString(
+        "en-GH",
+        {
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        }
+    );
+
+
+    const generatedDate =
+        document.getElementById("generatedDate");
+
+    if (generatedDate) {
+        generatedDate.textContent = formatted;
+    }
+
+
+    const mobileGeneratedDate =
+        document.getElementById("mobileGeneratedDate");
+
+    if (mobileGeneratedDate) {
+        mobileGeneratedDate.textContent = formatted;
+    }
+
+}
+
+/* =========================================================
+   LOAD MEMBERS
+========================================================= */
+
+function loadMembers() {
+
+    try {
+
+        /*
+         * Prevent accidental repeated
+         * simultaneous processing.
+         */
+
+        const mpArray =
+            (
+                typeof mpData !==
+                "undefined" &&
+                Array.isArray(mpData)
+            )
+                ? mpData
+                : [];
+
+
+        if (
+            mpArray.length === 0
+        ) {
+
+            throw new Error(
+                "mpData was not found or is empty."
+            );
+
+        }
+
+
+        const officialConstituencies =
+            getConstituencyUniverse();
+
+
+        if (
+            officialConstituencies.length === 0
+        ) {
+
+            throw new Error(
+                "constituencyData was not found or is empty."
+            );
+
+        }
+
+
+        /* =============================================
+           RESET INDEXES
+        ============================================= */
+
+        officialConstituencyMap =
+            new Map();
+
+        officialConstituencyRegionMap =
+            new Map();
+
+        validMPByConstituency =
+            new Map();
+
+        validMPByConstituencyRegion =
+            new Map();
+
+        revokedMPByConstituency =
+            new Map();
+
+        recordedConstituencySet =
+            new Set();
+
+        searchCache =
+            new Map();
+
+
+        /* =============================================
+           LOAD ALL MPs
+        ============================================= */
+
+        allMPs =
+            mpArray.slice();
+
+
+        /* =============================================
+           ACTIVE MPs
+        ============================================= */
+
+        activeMPs =
+            allMPs.filter(
+                function(mp) {
+
+                    return (
+                        normalizeStatus(
+                            mp.status
+                        ) ===
+                        "active"
+                    );
+
+                }
+            );
+
+
+        /* =============================================
+           REVOKED MPs
+        ============================================= */
+
+        revokedMPs =
+            allMPs.filter(
+                function(mp) {
+
+                    return (
+                        normalizeStatus(
+                            mp.status
+                        ) ===
+                        "revoked"
+                    );
+
+                }
+            );
+
+
+        /* =============================================
+           BUILD OFFICIAL INDEX
+        ============================================= */
+
+        buildOfficialConstituencyIndex();
+
+
+        /* =============================================
+           VALIDATE ACTIVE MPs ONCE
+        ============================================= */
+
+        validActiveMPs = [];
+
+        invalidActiveMPs = [];
+
+
+        activeMPs.forEach(
+            function(mp) {
+
+                const official =
+                    getOfficialConstituencyForMP(
+                        mp
+                    );
+
+
+                if (official) {
+
+                    validActiveMPs.push(
+                        mp
+                    );
+
+                }
+
+                else {
+
+                    invalidActiveMPs.push(
+                        mp
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =============================================
+           BUILD MP INDEX
+        ============================================= */
+
+        buildMPIndexes();
+
+
+        /* =============================================
+           BUILD VACANCIES
+        ============================================= */
+
+        vacantPositions =
+            getVacantPositions();
+
+
+        /* =============================================
+           BUILD 276 POSITION LIST ONCE
+        ============================================= */
+
+        allPositions =
+            buildPositionList();
+
+
+        /*
+         * Start with all 276 positions.
+         */
+
+        displayedPositions =
+            allPositions;
+
+
+        /* =============================================
+           BUILD SEARCH CACHE
+        ============================================= */
+
+        buildSearchCache();
+
+
+        /* =============================================
+           UPDATE DASHBOARD
+        ============================================= */
+
+        updateDashboard();
+
+
+        /* =============================================
+           RENDER TABLE
+        ============================================= */
+
+        renderTable(
+            displayedPositions
+        );
+
+
+        /* =============================================
+           DATE
+        ============================================= */
+
+        updateGeneratedDate();
+
+
+        /* =============================================
+           DEBUG
+        ============================================= */
+
+        console.log(
+            "=============================================="
+        );
+
+        console.log(
+            "YPG CONSTITUENCY REGISTRY"
+        );
+
+        console.log(
+            "=============================================="
+        );
+
+        console.log(
+            "Official constituencies:",
+            officialConstituencies.length
+        );
+
+        console.log(
+            "Total MP records:",
+            allMPs.length
+        );
+
+        console.log(
+            "Active MP records:",
+            activeMPs.length
+        );
+
+        console.log(
+            "Valid recorded MPs:",
+            validActiveMPs.length
+        );
+
+        console.log(
+            "Recorded constituencies:",
+            recordedConstituencySet.size
+        );
+
+        console.log(
+            "Invalid active MPs:",
+            invalidActiveMPs.length
+        );
+
+        console.log(
+            "Revoked MPs:",
+            revokedMPs.length
+        );
+
+        console.log(
+            "Vacant constituencies:",
+            vacantPositions.length
+        );
+
+        console.log(
+            "Displayed rows:",
+            allPositions.length
+        );
+
+        console.log(
+            "=============================================="
+        );
+
+
+        /*
+         * Expose useful information for debugging
+         * without continuously logging it.
+         */
+
+        window.ypgRegistry = {
+
+            allMPs:
+                allMPs,
+
+            activeMPs:
+                activeMPs,
+
+            validActiveMPs:
+                validActiveMPs,
+
+            invalidActiveMPs:
+                invalidActiveMPs,
+
+            revokedMPs:
+                revokedMPs,
+
+            vacantPositions:
+                vacantPositions,
+
+            allPositions:
+                allPositions,
+
+            recordedConstituencies:
+                new Set(
+                    recordedConstituencySet
+                )
+
+        };
+
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "YPG Registry Error:",
+            error
+        );
+
+
+        const tableBody =
+            document.getElementById(
+                "membersTableBody"
+            );
+
+
+        if (tableBody) {
+
+            tableBody.innerHTML = "";
+
+        }
+
+
+        const emptyState =
+            document.getElementById(
+                "emptyState"
+            );
+
+
+        if (emptyState) {
+
+            emptyState.style.display =
+                "block";
+
+            emptyState.textContent =
+                "Unable to load parliamentary data. Check mp-data.js and constituency-data.js.";
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   INITIALIZE SEARCH
+========================================================= */
+
+function initializeSearch() {
+
+    const searchInput =
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    if (!searchInput) {
+
+        return;
+
+    }
+
+
+    /*
+     * Remove previous listener first.
+     */
+
+    searchInput.removeEventListener(
+        "input",
+        searchMembers
+    );
+
+
+    /*
+     * Add one listener only.
+     */
+
+    searchInput.addEventListener(
+        "input",
+        searchMembers
+    );
+
+}
+
+
+/* =========================================================
+   INITIALIZE SYSTEM
+========================================================= */
+
+function initializeMPSystem() {
+
+    if (registryInitialized) {
+
+        return;
+
+    }
+
+
+    registryInitialized =
+        true;
+
+
+    initializeSearch();
+
+    loadMembers();
+
+}
+
+
+/* =========================================================
+   DOM READY
+========================================================= */
+
+if (
+    document.readyState ===
+    "loading"
+) {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializeMPSystem,
+        {
+            once: true
+        }
+    );
+
+}
+
+else {
+
+    initializeMPSystem();
+
+}
+
+
+/* =========================================================
+   GLOBAL FUNCTIONS
+========================================================= */
+
+window.loadMembers =
+    loadMembers;
+
+
+window.refreshMPDashboard =
+    refreshMPDashboard;
+
+
+window.searchMembers =
+    searchMembers;
+
+
+window.clearSearch =
+    clearSearch;
+
+
+window.printPDF =
+    printPDF;
+
+
+window.updateDashboard =
+    updateDashboard;
+
+
+window.buildPositionList =
+    buildPositionList;
+
+
+window.renderTable =
+    renderTable;
+
+
+window.findMember =
+    findMember;
+
+
+window.findActiveMember =
+    findActiveMember;
+
+
+window.findActiveMP =
+    findActiveMP;
+
+
+window.findRevokedMember =
+    findRevokedMember;
+
+
+window.findRevokedMP =
+    findRevokedMP;
+
+
+window.getRecordedConstituencySet =
+    getRecordedConstituencySet;
+
+
+window.getRecordedConstituencies =
+    getRecordedConstituencies;
+
+
+window.getVacantPositions =
+    getVacantPositions;
+
+
+window.getValidActiveMPs =
+    getValidActiveMPs;
+
+
+window.getInvalidActiveMPs =
+    getInvalidActiveMPs;
+
+
+window.isValidConstituencyMP =
+    isValidConstituencyMP;
+
+
+window.getOfficialConstituencyForMP =
+    getOfficialConstituencyForMP;
+
+
+window.normalizeConstituencyName =
+    normalizeConstituencyName;
+
+
+window.canonicalConstituency =
+    canonicalConstituency;
+
+
+window.constituencyNamesMatch =
+    constituencyNamesMatch;
+
+
+window.vacancyCountFromUniverse =
+    vacancyCountFromUniverse;
+
+
+/* =========================================================
+   DASHBOARD SUMMARY
+========================================================= */
+
+function getDashboardSummary() {
+
+    return {
+
+        totalPositions:
+            TOTAL_MP_POSITIONS,
+
+        totalRegions:
+            TOTAL_REGIONS,
+
+        totalConstituencies:
+            TOTAL_CONSTITUENCIES,
+
+        recorded:
+            recordedConstituencySet.size,
+
+        vacant:
+            vacantPositions.length,
+
+        revoked:
+            revokedMPs.length,
+
+        invalidActive:
+            invalidActiveMPs.length
+
+    };
+
+}
+
+
+window.getDashboardSummary =
+    getDashboardSummary;
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+
+/*
+ * GO TO CONSTITUENCY PAGE
+ */
+
+function goToConstituencyPage() {
+
+    window.location.href =
+        "constituency-registry.html";
+
+}
+
+
+/*
+ * GO BACK
+ */
+
+function goBack() {
+
+    if (
+        window.history.length > 1
+    ) {
+
+        window.history.back();
+
+    }
+
+    else {
+
+        window.location.href =
+            "index.html";
+
+    }
+
+}
+
+
+/*
+ * Make buttons globally available.
+ */
+
+window.goToConstituencyPage =
+    goToConstituencyPage;
+
+
+window.goBack =
+    goBack;
+
+
+/* =========================================================
+   END OF YPG REGISTRY CONTROLLER
+========================================================= */
+function openVacancyPage() {
+    window.location.href = "vacant-constituencies.html";
+}
+
+</script>
+</body>
+</html>

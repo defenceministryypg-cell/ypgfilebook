@@ -1,0 +1,4505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vacant Constituencies — Youth Parliament Ghana</title>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --ypg-green: #0b5d3b;
+    --ypg-green-dark: #08462e;
+    --gold: #d4af37;
+
+    --orange: #f59e0b;
+    --red: #dc2626;
+    --blue: #2563eb;
+
+    --dark: #17221c;
+    --text: #222;
+    --muted: #667085;
+
+    --light: #f5f7f6;
+    --white: #ffffff;
+
+    --border: #dfe3e8;
+
+    --shadow-sm:
+        0 2px 8px rgba(16, 24, 40, 0.06);
+
+    --shadow-md:
+        0 10px 30px rgba(16, 24, 40, 0.10);
+
+    --radius: 12px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--light);
+    color: var(--text);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page-container {
+    width: 100%;
+    max-width: 1500px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    background: var(--white);
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.page-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 35px;
+}
+
+
+/* =========================================================
+   WATERMARK
+========================================================= */
+
+.watermark-logo {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 550px;
+    height: 550px;
+
+    transform:
+        translate(-50%, -50%);
+
+    object-fit: contain;
+
+    opacity: 0.035;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    text-align: center;
+
+    padding-bottom: 25px;
+
+    border-bottom:
+        3px solid var(--ypg-green);
+
+    margin-bottom: 25px;
+}
+
+
+.header-left {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    text-align: left;
+}
+
+
+.top-logo {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+
+.header-text h1 {
+    color: var(--ypg-green);
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    margin-bottom: 6px;
+}
+
+
+.header-text h2 {
+    color: var(--dark);
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+
+.header-text p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LIVE BADGE
+========================================================= */
+
+.live-badge {
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border-radius: 30px;
+
+    background: #eef8f2;
+
+    color: var(--ypg-green);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #16a34a;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+
+/* =========================================================
+   ACCESS SCREEN
+========================================================= */
+
+.access-screen {
+    min-height: 55vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+
+.access-card {
+    width: 100%;
+    max-width: 470px;
+
+    background: #ffffff;
+
+    border:
+        1px solid var(--border);
+
+    border-top:
+        5px solid var(--ypg-green);
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow-md);
+
+    border-radius: 12px;
+}
+
+
+.access-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f7f0;
+
+    color: var(--ypg-green);
+
+    font-size: 27px;
+
+    font-weight: 800;
+}
+
+
+.access-card h2 {
+    color: var(--dark);
+
+    font-size: 23px;
+
+    margin-bottom: 8px;
+}
+
+
+.access-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
+}
+
+
+.password-group {
+    text-align: left;
+}
+
+
+.password-group label {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #344054;
+
+    margin-bottom: 7px;
+}
+
+
+.password-wrapper {
+    position: relative;
+}
+
+
+.password-wrapper input {
+    width: 100%;
+
+    padding: 13px 45px 13px 13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: #fff;
+
+    transition: 0.2s;
+}
+
+
+.password-wrapper input:focus {
+    border-color:
+        var(--ypg-green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(11, 93, 59, 0.08);
+}
+
+
+.show-password {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #667085;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.access-btn {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 13px 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--ypg-green);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.access-btn:hover {
+    background: var(--ypg-green-dark);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.access-error {
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 10px;
+
+    border-radius: 7px;
+
+    background: #fef3f2;
+
+    color: #b42318;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MAIN VACANCY CONTENT
+========================================================= */
+
+#vacancyContent {
+    display: none;
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.notice {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1faf5,
+            #ffffff
+        );
+
+    border:
+        1px solid #cfe7da;
+
+    border-left:
+        5px solid var(--ypg-green);
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+}
+
+
+.notice-label {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    background: #e8f7f0;
+
+    color: var(--ypg-green);
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 10px;
+}
+
+
+.notice h2 {
+    color: var(--dark);
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+
+.notice p {
+    color: #475467;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 8px;
+}
+
+
+.notice strong {
+    color: var(--ypg-green);
+}
+
+
+/* =========================================================
+   ENQUIRY BOX
+========================================================= */
+
+.enquiry-box {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 18px;
+
+    padding: 15px 18px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #dfe3e8;
+
+    border-radius: 8px;
+}
+
+
+.enquiry-title {
+    color: #475467;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-bottom: 3px;
+}
+
+
+.enquiry-name {
+    color: var(--ypg-green);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+.enquiry-number {
+    color: var(--dark);
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+.call-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 15px;
+
+    background: var(--ypg-green);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.call-btn:hover {
+    background: var(--ypg-green-dark);
+}
+
+
+/* =========================================================
+   DASHBOARD SUMMARY
+========================================================= */
+
+.summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.summary-card {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border:
+        1px solid var(--border);
+
+    border-top:
+        4px solid var(--ypg-green);
+}
+
+
+.summary-card.vacant {
+    border-top-color:
+        var(--orange);
+}
+
+
+.summary-card.regions {
+    border-top-color:
+        var(--blue);
+}
+
+
+.summary-label {
+    display: block;
+
+    color: #667085;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3px;
+
+    margin-bottom: 8px;
+}
+
+
+.summary-number {
+    display: block;
+
+    color: var(--dark);
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    font-weight: 850;
+
+    margin-bottom: 7px;
+}
+
+
+.summary-note {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   VACANCY HEADER
+========================================================= */
+
+.vacancy-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    padding-bottom: 12px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.vacancy-title h3 {
+    color: var(--dark);
+
+    font-size: 19px;
+
+    margin-bottom: 4px;
+}
+
+
+.vacancy-title p {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.lock-status {
+    padding: 7px 10px;
+
+    background: #ecfdf3;
+
+    color: #067647;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filters {
+    display: grid;
+
+    grid-template-columns:
+        1fr 220px;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+.filters input,
+.filters select {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+.filters input:focus,
+.filters select:focus {
+    border-color:
+        var(--ypg-green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(11, 93, 59, 0.07);
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: #ffffff;
+}
+
+
+table {
+    width: 100%;
+
+    min-width: 650px;
+
+    border-collapse:
+        collapse;
+}
+
+
+thead th {
+    background:
+        var(--ypg-green);
+
+    color: #ffffff;
+
+    padding: 13px 12px;
+
+    font-size: 11px;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+
+tbody td {
+    padding: 12px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+
+tbody tr:nth-child(even) {
+    background: #fafcfb;
+}
+
+
+tbody tr:hover {
+    background: #f0f7f3;
+}
+
+
+.number {
+    width: 60px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-weight: 800;
+}
+
+
+.constituency-name {
+    color: var(--ypg-green);
+
+    font-weight: 800;
+}
+
+
+.region-name {
+    color: #475467;
+
+    font-weight: 600;
+}
+
+
+.vacancy-status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #fff7e8;
+
+    color: #b54708;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SEARCH RESULT COUNT
+========================================================= */
+
+.result-count {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty {
+    display: none;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   APPLICATION SECTION
+========================================================= */
+
+.application-section {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: #f8faf9;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+
+.application-section h3 {
+    color: var(--dark);
+
+    font-size: 19px;
+
+    margin-bottom: 8px;
+}
+
+
+.application-section p {
+    max-width: 750px;
+
+    margin: 0 auto 15px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.application-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 20px;
+
+    background: var(--ypg-green);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.application-btn:hover {
+    background:
+        var(--ypg-green-dark);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    margin-top: 30px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid var(--border);
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HIDDEN
+========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .page-content {
+        padding: 25px 18px;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+
+    .live-badge {
+        position: static;
+
+        transform: none;
+
+        margin-top: 12px;
+    }
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .vacancy-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .enquiry-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .call-btn {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .page-content {
+        padding: 18px 10px;
+    }
+
+
+    .header {
+        padding-bottom: 18px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .header-left {
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+
+        width: 100%;
+    }
+
+
+    .top-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+
+    .header-text {
+        text-align: center;
+    }
+
+
+    .header-text h1 {
+        font-size: 20px;
+    }
+
+
+    .header-text h2 {
+        font-size: 14px;
+    }
+
+
+    .header-text p {
+        font-size: 10px;
+    }
+
+
+    .live-badge {
+        margin-top: 9px;
+
+        padding: 6px 9px;
+
+        font-size: 8px;
+    }
+
+
+    .live-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+
+    .access-screen {
+        min-height: 60vh;
+
+        padding: 25px 5px;
+    }
+
+
+    .access-card {
+        padding: 25px 18px;
+    }
+
+
+    .access-card h2 {
+        font-size: 20px;
+    }
+
+
+    .notice {
+        padding: 18px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .notice h2 {
+        font-size: 18px;
+    }
+
+
+    .notice p {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+    }
+
+
+    .summary-card {
+        padding: 15px;
+    }
+
+
+    .summary-number {
+        font-size: 30px;
+    }
+
+
+    .summary-label {
+        font-size: 9px;
+    }
+
+
+    .summary-note {
+        font-size: 9px;
+
+        line-height: 1.4;
+    }
+
+
+    .vacancy-title h3 {
+        font-size: 16px;
+    }
+
+
+    .vacancy-title p {
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+
+    .application-section {
+        padding: 20px 15px;
+    }
+
+
+    .application-section h3 {
+        font-size: 17px;
+    }
+
+
+    .application-section p {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+
+    .summary-card {
+        padding: 12px;
+    }
+
+
+    .summary-number {
+        font-size: 27px;
+    }
+
+
+    .summary-label {
+        font-size: 8px;
+    }
+
+
+    .summary-note {
+        font-size: 8px;
+    }
+
+
+    .notice {
+        padding: 15px;
+    }
+
+
+    .notice h2 {
+        font-size: 16px;
+    }
+
+}
+/* =========================================================
+   OFFICIAL YPG VACANCY RELEASE PRINT
+========================================================= */
+
+.print-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+}
+
+.print-vacancies-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 6px 10px;
+
+    border: 1px solid #0b5d3b;
+    border-radius: 5px;
+
+    background: #0b5d3b;
+    color: #ffffff;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.print-vacancies-btn:hover {
+    background: #08462e;
+}
+
+@media (max-width: 600px) {
+
+    .print-actions {
+        justify-content: flex-end;
+    }
+
+    .print-vacancies-btn {
+        width: auto;
+        padding: 6px 9px;
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   PRINT DOCUMENT
+========================================================= */
+
+#vacancy-print-document {
+    display: none;
+}
+
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 14mm 15mm 16mm 15mm;
+    }
+
+    html,
+    body {
+        width: 100%;
+        background: #ffffff !important;
+        color: #111111 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Hide the website completely */
+    body > * {
+        visibility: hidden !important;
+    }
+
+    /* Show ONLY official document */
+    #vacancy-print-document,
+    #vacancy-print-document * {
+        visibility: visible !important;
+    }
+
+    #vacancy-print-document {
+        display: block !important;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: 100%;
+
+        background: #ffffff !important;
+        color: #111111 !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       OFFICIAL LETTERHEAD
+    ===================================================== */
+
+    .official-letterhead {
+        width: 100%;
+        text-align: center;
+
+        padding-bottom: 11px;
+
+        border-bottom: 4px solid #0b5d3b;
+
+        position: relative;
+    }
+
+
+    .official-letterhead::after {
+        content: "";
+
+        display: block;
+
+        width: 100%;
+        height: 2px;
+
+        background: #d4af37;
+
+        margin-top: 3px;
+    }
+
+
+    .official-logo {
+        width: 82px;
+        height: 82px;
+
+        object-fit: contain;
+
+        display: block;
+
+        margin: 0 auto 7px;
+    }
+
+
+    .official-org {
+        margin: 0;
+
+        color: #0b5d3b;
+
+        font-size: 21px;
+
+        font-weight: 900;
+
+        letter-spacing: 1px;
+
+        text-transform: uppercase;
+    }
+
+
+    .official-subtitle {
+        margin: 4px 0 0;
+
+        color: #222222;
+
+        font-size: 11px;
+
+        font-weight: 700;
+
+        letter-spacing: .7px;
+
+        text-transform: uppercase;
+    }
+
+
+    .official-motto {
+        margin: 5px 0 0;
+
+        color: #666666;
+
+        font-size: 9px;
+
+        font-style: italic;
+
+        letter-spacing: .3px;
+    }
+
+
+    /* =====================================================
+       DOCUMENT META
+    ===================================================== */
+
+    .document-meta {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: flex-start;
+
+        width: 100%;
+
+        margin-top: 17px;
+
+        margin-bottom: 16px;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+
+    .document-meta-left {
+        text-align: left;
+    }
+
+
+    .document-meta-right {
+        text-align: right;
+    }
+
+
+    .meta-label {
+        color: #666666;
+
+        font-weight: 700;
+
+        text-transform: uppercase;
+
+        font-size: 8px;
+
+        letter-spacing: .5px;
+    }
+
+
+    .meta-value {
+        color: #111111;
+
+        font-weight: 700;
+    }
+
+
+    /* =====================================================
+       DOCUMENT TITLE
+    ===================================================== */
+
+    .official-document-title {
+        text-align: center;
+
+        margin: 13px 0 17px;
+
+        padding: 9px 10px;
+
+        border-top: 1px solid #d4af37;
+        border-bottom: 1px solid #d4af37;
+
+        color: #0b5d3b;
+
+        font-size: 15px;
+
+        font-weight: 900;
+
+        letter-spacing: .7px;
+
+        text-transform: uppercase;
+    }
+
+
+    .official-document-reference {
+        text-align: center;
+
+        margin-top: -9px;
+
+        margin-bottom: 18px;
+
+        color: #555555;
+
+        font-size: 9px;
+
+        font-weight: 700;
+    }
+
+
+    /* =====================================================
+       FORMAL LETTER CONTENT
+    ===================================================== */
+
+    .official-letter-body {
+        font-size: 11px;
+
+        line-height: 1.7;
+
+        color: #222222;
+
+        text-align: justify;
+    }
+
+
+    .official-letter-body p {
+        margin: 0 0 9px;
+    }
+
+
+    .official-recipient {
+        font-weight: 800;
+
+        margin-bottom: 12px !important;
+
+        text-align: left;
+    }
+
+
+    .official-opening {
+        font-weight: 700;
+
+        margin-bottom: 10px !important;
+    }
+
+
+    .official-highlight {
+        margin: 14px 0;
+
+        padding: 10px 12px;
+
+        border-left: 4px solid #0b5d3b;
+
+        background: #f4f8f5 !important;
+
+        font-size: 10.5px;
+
+        line-height: 1.6;
+    }
+
+
+    .official-highlight strong {
+        color: #0b5d3b;
+    }
+
+
+    /* =====================================================
+       VACANCY TABLE
+    ===================================================== */
+
+    .official-vacancy-heading {
+        margin-top: 18px;
+
+        margin-bottom: 8px;
+
+        color: #0b5d3b;
+
+        font-size: 11px;
+
+        font-weight: 900;
+
+        text-transform: uppercase;
+
+        letter-spacing: .5px;
+    }
+
+
+    .official-vacancy-table {
+        width: 100%;
+
+        border-collapse: collapse;
+
+        table-layout: fixed;
+
+        margin-top: 5px;
+
+        font-size: 9.5px;
+    }
+
+
+    .official-vacancy-table thead {
+        display: table-header-group;
+    }
+
+
+    .official-vacancy-table th {
+        background: #0b5d3b !important;
+
+        color: #ffffff !important;
+
+        border: 1px solid #08462e;
+
+        padding: 7px 8px;
+
+        text-align: left;
+
+        font-size: 8.5px;
+
+        font-weight: 900;
+
+        text-transform: uppercase;
+
+        letter-spacing: .3px;
+    }
+
+
+    .official-vacancy-table th:first-child {
+        width: 9%;
+
+        text-align: center;
+    }
+
+
+    .official-vacancy-table th:nth-child(2) {
+        width: 56%;
+    }
+
+
+    .official-vacancy-table th:nth-child(3) {
+        width: 35%;
+    }
+
+
+    .official-vacancy-table td {
+        border: 1px solid #c9cfcb;
+
+        padding: 6px 8px;
+
+        color: #222222;
+
+        background: #ffffff !important;
+
+        vertical-align: middle;
+
+        line-height: 1.35;
+    }
+
+
+    .official-vacancy-table td:first-child {
+        text-align: center;
+
+        font-weight: 800;
+
+        color: #0b5d3b;
+    }
+
+
+    .official-vacancy-table tbody tr:nth-child(even) td {
+        background: #f8faf9 !important;
+    }
+
+
+    .official-vacancy-table tr {
+        page-break-inside: avoid;
+
+        break-inside: avoid;
+    }
+
+
+    /* =====================================================
+       NOMINATION INFORMATION
+    ===================================================== */
+
+    .nomination-box {
+        margin-top: 17px;
+
+        padding: 11px 13px;
+
+        border: 1px solid #cfd8d2;
+
+        border-left: 4px solid #d4af37;
+
+        background: #fafbf9 !important;
+    }
+
+
+    .nomination-box-title {
+        margin-bottom: 5px;
+
+        color: #0b5d3b;
+
+        font-size: 9px;
+
+        font-weight: 900;
+
+        text-transform: uppercase;
+
+        letter-spacing: .5px;
+    }
+
+
+    .nomination-box p {
+        margin: 0;
+
+        font-size: 10px;
+
+        line-height: 1.55;
+
+        color: #333333;
+    }
+
+
+    /* =====================================================
+       ENQUIRIES
+    ===================================================== */
+
+    .official-enquiry {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        gap: 15px;
+
+        margin-top: 16px;
+
+        padding: 11px 13px;
+
+        border: 1px solid #cfd8d2;
+
+        background: #f4f8f5 !important;
+    }
+
+
+    .official-enquiry-label {
+        color: #666666;
+
+        font-size: 8px;
+
+        font-weight: 800;
+
+        text-transform: uppercase;
+
+        letter-spacing: .5px;
+
+        margin-bottom: 2px;
+    }
+
+
+    .official-enquiry-name {
+        color: #0b5d3b;
+
+        font-size: 11px;
+
+        font-weight: 900;
+    }
+
+
+    .official-enquiry-phone {
+        color: #222222;
+
+        font-size: 11px;
+
+        font-weight: 800;
+    }
+
+
+    /* =====================================================
+       DECLARATION
+    ===================================================== */
+
+    .official-declaration {
+        margin-top: 14px;
+
+        font-size: 9.5px;
+
+        line-height: 1.55;
+
+        color: #444444;
+
+        text-align: justify;
+    }
+
+
+    /* =====================================================
+       SIGNATURE
+    ===================================================== */
+
+    .official-signature {
+        margin-top: 32px;
+
+        width: 100%;
+    }
+
+
+    .signature-line-official {
+        width: 210px;
+
+        border-top: 1px solid #222222;
+
+        margin-bottom: 5px;
+    }
+
+
+    .signature-name {
+        color: #111111;
+
+        font-size: 10px;
+
+        font-weight: 900;
+
+        text-transform: uppercase;
+    }
+
+
+    .signature-position {
+        color: #444444;
+
+        font-size: 9px;
+
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .official-print-footer {
+        margin-top: 25px;
+
+        padding-top: 8px;
+
+        border-top: 1px solid #cfd3d0;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        font-size: 7.5px;
+
+        color: #666666;
+    }
+
+
+    .official-print-footer-left {
+        text-align: left;
+    }
+
+
+    .official-print-footer-right {
+        text-align: right;
+    }
+
+
+    /* =====================================================
+       PAGE BREAKS
+    ===================================================== */
+
+    .official-vacancy-table tr {
+        page-break-inside: avoid;
+    }
+
+    .official-enquiry,
+    .nomination-box,
+    .official-signature {
+        page-break-inside: avoid;
+    }
+}
+
+
+.back-to-registry {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.back-registry-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #0b5d3b;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-registry-btn span {
+    font-size: 17px;
+    line-height: 1;
+}
+
+.back-registry-btn:hover {
+    background: #0b5d3b;
+    color: #ffffff;
+    border-color: #0b5d3b;
+    transform: translateX(-2px);
+}
+
+@media (max-width: 600px) {
+
+    .back-to-registry {
+        margin-bottom: 10px;
+    }
+
+    .back-registry-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px;
+    }
+}
+
+
+
+
+/* =========================================================
+   SMALL PHONE RESPONSIVE DESIGN
+   320px – 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-size: 13px;
+    }
+
+    .container,
+    .page-container,
+    .main-container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    header,
+    .header {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .header-content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .logo,
+    .header-logo {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+    }
+
+    .logo img,
+    .header-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .header-title {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .header-title h1 {
+        font-size: 15px;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .header-title p {
+        font-size: 9px;
+        line-height: 1.3;
+        margin: 2px 0 0;
+    }
+
+    .vacancy-badge {
+        font-size: 7px;
+        padding: 4px 6px;
+        white-space: nowrap;
+    }
+
+
+    /* ---------- BACK BUTTON ---------- */
+
+    .back-to-registry {
+        width: 100%;
+        margin: 8px 0 10px;
+    }
+
+    .back-registry-btn {
+        width: auto;
+        min-height: 32px;
+        padding: 7px 10px;
+        font-size: 9px;
+        border-radius: 5px;
+        gap: 5px;
+    }
+
+    .back-registry-btn span {
+        font-size: 14px;
+    }
+
+
+    /* ---------- PAGE TITLE ---------- */
+
+    .page-title,
+    .section-title {
+        font-size: 18px;
+        line-height: 1.25;
+        margin-bottom: 6px;
+    }
+
+    .page-subtitle,
+    .section-subtitle {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+
+    /* ---------- NOTICE ---------- */
+
+    .notice,
+    .notice-box,
+    .vacancy-notice {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+    }
+
+    .notice h3,
+    .notice-box h3,
+    .vacancy-notice h3 {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .notice p,
+    .notice-box p,
+    .vacancy-notice p {
+        font-size: 10px;
+        line-height: 1.55;
+        margin-bottom: 5px;
+    }
+
+
+    /* ---------- SUMMARY CARDS ---------- */
+
+    .summary-grid,
+    .stats-grid,
+    .summary-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+        width: 100%;
+    }
+
+    .summary-card,
+    .stat-card {
+        min-width: 0;
+        padding: 9px 7px;
+        border-radius: 6px;
+    }
+
+    .summary-card h3,
+    .stat-card h3 {
+        font-size: 8px;
+        line-height: 1.3;
+        margin-bottom: 3px;
+    }
+
+    .summary-card .number,
+    .stat-card .number,
+    .summary-card strong,
+    .stat-card strong {
+        font-size: 18px;
+        line-height: 1.1;
+    }
+
+    .summary-card p,
+    .stat-card p {
+        font-size: 8px;
+    }
+
+
+    /* ---------- FILTERS ---------- */
+
+    .filters,
+    .filter-row,
+    .search-filter-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .filter-group {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .filter-group label {
+        display: block;
+        font-size: 9px;
+        margin-bottom: 3px;
+    }
+
+    .filter-group input,
+    .filter-group select,
+    .search-input,
+    #searchInput,
+    #regionFilter {
+        width: 100%;
+        max-width: 100%;
+        height: 34px;
+        min-height: 34px;
+        padding: 7px 9px;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
+
+    /* ---------- PRINT BUTTON ---------- */
+
+    .print-actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin: 8px 0;
+    }
+
+    .print-vacancies-btn {
+        width: auto;
+        min-width: 0;
+        padding: 6px 8px;
+        font-size: 8px;
+        line-height: 1;
+        border-radius: 4px;
+        gap: 4px;
+        white-space: nowrap;
+    }
+
+
+    /* ---------- TABLE ---------- */
+
+    .table-container,
+    .vacancy-table-container,
+    .table-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 6px;
+    }
+
+    table {
+        width: 100%;
+        min-width: 420px;
+        border-collapse: collapse;
+    }
+
+    th {
+        font-size: 8px;
+        padding: 7px 6px;
+        white-space: nowrap;
+    }
+
+    td {
+        font-size: 9px;
+        padding: 7px 6px;
+        line-height: 1.35;
+    }
+
+    th:first-child,
+    td:first-child {
+        width: 38px;
+        text-align: center;
+    }
+
+    th:last-child,
+    td:last-child {
+        width: 65px;
+        text-align: center;
+    }
+
+    .status,
+    .vacant-status {
+        font-size: 7px;
+        padding: 3px 5px;
+        border-radius: 4px;
+        white-space: nowrap;
+    }
+
+
+    /* ---------- APPLICATION SECTION ---------- */
+
+    .application-section,
+    .apply-section,
+    .contact-section {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+
+    .application-section h3,
+    .apply-section h3,
+    .contact-section h3 {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .application-section p,
+    .apply-section p,
+    .contact-section p {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .application-section button,
+    .apply-section button,
+    .contact-section button {
+        width: 100%;
+        min-height: 34px;
+        padding: 8px 10px;
+        font-size: 9px;
+        border-radius: 5px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer,
+    .footer {
+        width: 100%;
+        margin-top: 15px;
+        padding: 12px 10px;
+    }
+
+    .footer-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .footer p {
+        font-size: 8px;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .footer-links a {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   320px – 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    body {
+        font-size: 12px;
+    }
+
+    .container,
+    .page-container,
+    .main-container {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    .header-content {
+        gap: 6px;
+    }
+
+    .logo,
+    .header-logo {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+
+    .header-title h1 {
+        font-size: 13px;
+    }
+
+    .header-title p {
+        font-size: 8px;
+    }
+
+    .vacancy-badge {
+        font-size: 6px;
+        padding: 3px 4px;
+    }
+
+    .page-title,
+    .section-title {
+        font-size: 16px;
+    }
+
+    .summary-grid,
+    .stats-grid,
+    .summary-cards {
+        gap: 5px;
+    }
+
+    .summary-card,
+    .stat-card {
+        padding: 7px 5px;
+    }
+
+    .summary-card h3,
+    .stat-card h3 {
+        font-size: 7px;
+    }
+
+    .summary-card .number,
+    .stat-card .number,
+    .summary-card strong,
+    .stat-card strong {
+        font-size: 16px;
+    }
+
+    .print-vacancies-btn {
+        padding: 5px 7px;
+        font-size: 7px;
+    }
+
+    th {
+        font-size: 7px;
+        padding: 6px 5px;
+    }
+
+    td {
+        font-size: 8px;
+        padding: 6px 5px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   300px – 320px
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .container,
+    .page-container,
+    .main-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .header-title h1 {
+        font-size: 12px;
+    }
+
+    .header-title p {
+        font-size: 7px;
+    }
+
+    .logo,
+    .header-logo {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+    }
+
+    .vacancy-badge {
+        display: none;
+    }
+
+    .summary-grid,
+    .stats-grid,
+    .summary-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .summary-card .number,
+    .stat-card .number,
+    .summary-card strong,
+    .stat-card strong {
+        font-size: 14px;
+    }
+
+    .print-vacancies-btn {
+        font-size: 7px;
+        padding: 5px 6px;
+    }
+
+    table {
+        min-width: 390px;
+    }
+}
+
+.table-container,
+.vacancy-table-container,
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="page-container">
+
+
+    <!-- WATERMARK -->
+
+    <img
+        src="YPG-LOGO.png"
+        class="watermark-logo"
+        alt=""
+    >
+
+
+    <div class="page-content">
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="header">
+
+            <div class="header-left">
+
+                <img
+                    src="YPG-LOGO.png"
+                    class="top-logo"
+                    alt="Youth Parliament Ghana Logo"
+                >
+
+                <div class="header-text">
+
+                    <h1>
+                        Youth Parliament Ghana
+                    </h1>
+
+                    <h2>
+                        Call for Nominations
+                    </h2>
+
+                    <p>
+                        Vacant Parliamentary Constituencies
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="live-badge">
+
+                <span class="live-dot"></span>
+
+                VACANCY NOTICE
+
+            </div>
+
+        </header>
+        <div class="back-to-registry">
+    <button
+        type="button"
+        onclick="goBackToRegistry()"
+        class="back-registry-btn"
+    >
+        <span>←</span>
+        Back to Registry
+    </button>
+</div>
+
+
+        <!-- =====================================================
+             PASSWORD ACCESS
+        ====================================================== -->
+
+        <section
+            class="access-screen"
+            id="accessScreen"
+        >
+
+            <div class="access-card">
+
+                <div class="access-icon">
+                    🔒
+                </div>
+
+                <h2>
+                    Restricted Access
+                </h2>
+
+                <p>
+                    This page contains the current list of vacant
+                    parliamentary constituencies for nomination.
+                    Please enter the authorized access password
+                    to continue.
+                </p>
+
+
+                <div class="password-group">
+
+                    <label for="accessPassword">
+                        Access Password
+                    </label>
+
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="accessPassword"
+                            placeholder="Enter access password"
+                            autocomplete="off"
+                        >
+
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            onclick="togglePassword()"
+                        >
+                            SHOW
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="access-btn"
+                    onclick="checkAccess()"
+                >
+                    Access Vacancy List
+                </button>
+
+
+                <div
+                    class="access-error"
+                    id="accessError"
+                >
+                    Incorrect password. Please try again.
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             VACANCY CONTENT
+        ====================================================== -->
+
+        <main id="vacancyContent">
+
+
+            <!-- =================================================
+                 OFFICIAL NOTICE
+            ================================================== -->
+
+            <section class="notice">
+
+                <span class="notice-label">
+                    OFFICIAL CALL FOR NOMINATIONS
+                </span>
+
+
+                <h2>
+                    Vacant Parliamentary Constituencies
+                </h2>
+
+
+                <p>
+                    Youth Parliament Ghana hereby calls on all
+                    interested and qualified persons who wish to
+                    be considered for nomination to any of the
+                    vacant Parliamentary Constituencies listed
+                    below to express their interest.
+                </p>
+
+
+                <p>
+                    Interested applicants are encouraged to
+                    submit their nomination details and begin
+                    the <strong>necessary nomination steps</strong>
+                    for consideration.
+                </p>
+
+
+                <div class="enquiry-box">
+
+                    <div>
+
+                        <div class="enquiry-title">
+                            FOR ALL ENQUIRIES
+                        </div>
+
+                        <div class="enquiry-name">
+                            HON. MAVIS
+                        </div>
+
+                        <div class="enquiry-number">
+                            0542809440
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="tel:0542809440"
+                        class="call-btn"
+                    >
+                        Call Hon. Mavis
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUMMARY
+            ================================================== -->
+
+            <section class="summary-grid">
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        Total Constituencies
+                    </span>
+
+                    <span
+                        class="summary-number"
+                        id="totalConstituencies"
+                    >
+                        276
+                    </span>
+
+                    <span class="summary-note">
+                        Official parliamentary constituencies
+                    </span>
+
+                </div>
+
+
+                <div class="summary-card vacant">
+
+                    <span class="summary-label">
+                        Vacant Positions
+                    </span>
+
+                    <span
+                        class="summary-number"
+                        id="vacancyCount"
+                    >
+                        0
+                    </span>
+
+                    <span class="summary-note">
+                        Currently open for nomination
+                    </span>
+
+                </div>
+
+
+                <div class="summary-card regions">
+
+                    <span class="summary-label">
+                        Regions
+                    </span>
+
+                    <span
+                        class="summary-number"
+                        id="regionCount"
+                    >
+                        0
+                    </span>
+
+                    <span class="summary-note">
+                        Regions with vacancies
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 VACANCY LIST HEADER
+            ================================================== -->
+
+            <section class="vacancy-header">
+
+                <div class="vacancy-title">
+
+                    <h3>
+                        Available Vacancies
+                    </h3>
+
+                    <p>
+                        Official constituencies currently without
+                        a valid registered active member.
+                    </p>
+
+                </div>
+
+
+                <span class="lock-status">
+                    ✓ ACCESS GRANTED
+                </span>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FILTERS
+            ================================================== -->
+
+            <div class="filters">
+
+                <input
+                    type="search"
+                    id="vacancySearch"
+                    placeholder="Search constituency or region..."
+                    autocomplete="off"
+                >
+
+
+                <select id="regionFilter">
+
+                    <option value="">
+                        All Regions
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="result-count"
+                id="resultCount"
+            >
+                Showing 0 vacancies
+            </div>
+
+             <div class="print-actions">
+    <button type="button" class="print-vacancies-btn" onclick="printVacancyRelease()">
+        🖨️ PRINT VACANCY RELEASE
+    </button>
+</div>
+
+            <!-- =================================================
+                 TABLE
+            ================================================== -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                No.
+                            </th>
+
+                            <th>
+                                Constituency
+                            </th>
+
+                            <th>
+                                Region
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="vacancyTableBody"
+                    ></tbody>
+
+                </table>
+
+
+                <div
+                    class="empty"
+                    id="emptyState"
+                >
+                    No vacant constituency matches your search.
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 APPLICATION SECTION
+            ================================================== -->
+
+            <section class="application-section">
+
+                <h3>
+                    Interested in a Vacant Constituency?
+                </h3>
+
+
+                <p>
+                    If you are interested in applying for nomination
+                    to any of the vacant constituencies above, please
+                    contact <strong>Hon. Mavis on 0542809440</strong>
+                    for enquiries and to begin the necessary
+                    nomination process.
+                </p>
+
+
+                <a
+                    href="tel:0542809440"
+                    class="application-btn"
+                >
+                    Contact for Nomination Enquiries
+                </a>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer class="footer">
+
+            Youth Parliament Ghana —
+            Official Vacancy & Nomination Notice
+
+            <br>
+
+            Vacancies are determined from the official
+            constituency registry.
+
+            <br>
+
+            For enquiries:
+            <strong>Hon. Mavis — 0542809440</strong>
+
+            <br>
+
+            Generated:
+            <span id="generatedDate">
+                -
+            </span>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     DATA FILES
+========================================================= -->
+
+<script src="js/constituency-data.js"></script>
+<script src="js/mp-data.js"></script>
+
+
+<script>
+    function goBackToRegistry() {
+    window.location.href = "constituency-registry.html";
+}
+
+/* =========================================================
+   ACCESS PASSWORD
+========================================================= */
+
+/*
+ * CHANGE THIS PASSWORD BEFORE PUBLISHING.
+ *
+ * IMPORTANT:
+ * This is a client-side password.
+ * It is NOT suitable for highly confidential information.
+ */
+
+const VACANCY_ACCESS_PASSWORD =
+    "YPGVACANCY";
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
+let vacantConstituencies = [];
+
+let filteredVacancies = [];
+
+
+/* =========================================================
+   GET CONSTITUENCY DATA
+========================================================= */
+
+function getConstituencyData() {
+
+    try {
+
+        if (
+            typeof window.constituencyData !== "undefined" &&
+            Array.isArray(window.constituencyData)
+        ) {
+
+            return window.constituencyData;
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+
+    try {
+
+        if (
+            typeof constituencyData !== "undefined" &&
+            Array.isArray(constituencyData)
+        ) {
+
+            return constituencyData;
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+
+    return [];
+
+}
+
+
+/* =========================================================
+   NORMALIZE STATUS
+========================================================= */
+
+function normalizeStatus(value) {
+
+    return String(value || "")
+        .trim()
+        .toLowerCase();
+
+}
+
+
+/* =========================================================
+   NORMALIZE REGION
+========================================================= */
+
+function normalizeRegion(value) {
+
+    return String(value || "")
+        .normalize("NFKD")
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+        .trim()
+        .toLowerCase()
+        .replace(
+            /[–—−-]/g,
+            " "
+        )
+        .replace(
+            /[^\w\s]/g,
+            " "
+        )
+        .replace(
+            /\s+/g,
+            " "
+        )
+        .trim();
+
+}
+
+
+/* =========================================================
+   NORMALIZE CONSTITUENCY
+========================================================= */
+
+function normalizeConstituencyName(value) {
+
+    return String(value ?? "")
+        .normalize("NFKD")
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+        .trim()
+        .toLowerCase()
+
+        /*
+         * Remove constituency wording.
+         */
+
+        .replace(
+            /\b(constituency|constituencies)\b/g,
+            " "
+        )
+
+        /*
+         * Treat separators as spaces.
+         */
+
+        .replace(
+            /[–—−\-\/\\_]+/g,
+            " "
+        )
+
+        /*
+         * Remove punctuation.
+         */
+
+        .replace(
+            /[^a-z0-9\s]/g,
+            " "
+        )
+
+        /*
+         * Normalize spaces.
+         */
+
+        .replace(
+            /\s+/g,
+            " "
+        )
+
+        .trim();
+
+}
+
+
+/* =========================================================
+   ALIASES
+========================================================= */
+
+const CONSTITUENCY_ALIASES = {
+
+    "ayawaso west":
+        "ayawaso west wuogon",
+
+    "ayawaso west wuogon":
+        "ayawaso west wuogon"
+
+};
+
+
+/* =========================================================
+   CANONICAL CONSTITUENCY
+========================================================= */
+
+function canonicalConstituency(value) {
+
+    const normalized =
+        normalizeConstituencyName(value);
+
+    if (!normalized) {
+
+        return "";
+
+    }
+
+
+    return (
+        CONSTITUENCY_ALIASES[normalized] ||
+        normalized
+    );
+
+}
+
+
+/* =========================================================
+   GET MP DATA
+========================================================= */
+
+function getMPData() {
+
+    try {
+
+        if (
+            typeof window.mpData !== "undefined" &&
+            Array.isArray(window.mpData)
+        ) {
+
+            return window.mpData;
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+
+    try {
+
+        if (
+            typeof mpData !== "undefined" &&
+            Array.isArray(mpData)
+        ) {
+
+            return mpData;
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+
+    return [];
+
+}
+
+
+/* =========================================================
+   BUILD RECORDED SET
+========================================================= */
+
+function getRecordedConstituencies() {
+
+    const recorded =
+        new Set();
+
+    const members =
+        getMPData();
+
+
+    members.forEach(function(mp) {
+
+        if (!mp) {
+            return;
+        }
+
+
+        /*
+         * ONLY ACTIVE MEMBERS
+         */
+
+        if (
+            normalizeStatus(mp.status) !==
+            "active"
+        ) {
+
+            return;
+
+        }
+
+
+        const constituency =
+            canonicalConstituency(
+                mp.constituency
+            );
+
+
+        if (constituency) {
+
+            recorded.add(
+                constituency
+            );
+
+        }
+
+    });
+
+
+    return recorded;
+
+}
+
+
+/* =========================================================
+   BUILD VACANCIES
+========================================================= */
+
+function buildVacancies() {
+
+    const universe =
+        getConstituencyData();
+
+
+    const recorded =
+        getRecordedConstituencies();
+
+
+    if (
+        !Array.isArray(universe)
+    ) {
+
+        return [];
+
+    }
+
+
+    const vacancies = [];
+
+
+    universe.forEach(function(item, index) {
+
+        if (
+            !item ||
+            !item.constituency
+        ) {
+
+            return;
+
+        }
+
+
+        const key =
+            canonicalConstituency(
+                item.constituency
+            );
+
+
+        if (!key) {
+
+            return;
+
+        }
+
+
+        /*
+         * A constituency is vacant
+         * when there is no ACTIVE
+         * recorded MP occupying it.
+         */
+
+        if (
+            !recorded.has(key)
+        ) {
+
+            vacancies.push({
+
+                number:
+                    index + 1,
+
+                constituency:
+                    item.constituency,
+
+                region:
+                    item.region || "-",
+
+                status:
+                    "Vacant"
+
+            });
+
+        }
+
+    });
+
+
+    return vacancies;
+
+}
+
+
+/* =========================================================
+   LOAD VACANCIES
+========================================================= */
+
+function loadVacancies() {
+
+    vacantConstituencies =
+        buildVacancies();
+
+
+    filteredVacancies =
+        [...vacantConstituencies];
+
+
+    updateSummary();
+
+    populateRegionFilter();
+
+    renderVacancies();
+
+    updateGeneratedDate();
+
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+function updateSummary() {
+
+    const total =
+        getConstituencyData().length;
+
+
+    const vacancyCount =
+        vacantConstituencies.length;
+
+
+    const regions =
+        new Set();
+
+
+    vacantConstituencies.forEach(
+        function(item) {
+
+            const region =
+                String(
+                    item.region || ""
+                ).trim();
+
+
+            if (region) {
+
+                regions.add(region);
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "totalConstituencies"
+    ).textContent =
+        total || 276;
+
+
+    document.getElementById(
+        "vacancyCount"
+    ).textContent =
+        vacancyCount;
+
+
+    document.getElementById(
+        "regionCount"
+    ).textContent =
+        regions.size;
+
+}
+
+
+/* =========================================================
+   REGION FILTER
+========================================================= */
+
+function populateRegionFilter() {
+
+    const select =
+        document.getElementById(
+            "regionFilter"
+        );
+
+
+    if (!select) {
+        return;
+    }
+
+
+    const regions =
+        new Set();
+
+
+    vacantConstituencies.forEach(
+        function(item) {
+
+            if (item.region) {
+
+                regions.add(
+                    item.region
+                );
+
+            }
+
+        }
+    );
+
+
+    const sortedRegions =
+        Array.from(regions)
+            .sort(function(a, b) {
+
+                return a.localeCompare(b);
+
+            });
+
+
+    select.innerHTML = `
+        <option value="">
+            All Regions
+        </option>
+    `;
+
+
+    sortedRegions.forEach(
+        function(region) {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+            option.value =
+                normalizeRegion(region);
+
+            option.textContent =
+                region;
+
+            select.appendChild(
+                option
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   FILTER VACANCIES
+========================================================= */
+
+function filterVacancies() {
+
+    const search =
+        document.getElementById(
+            "vacancySearch"
+        ).value
+        .trim()
+        .toLowerCase();
+
+
+    const region =
+        document.getElementById(
+            "regionFilter"
+        ).value;
+
+
+    filteredVacancies =
+        vacantConstituencies.filter(
+            function(item) {
+
+                const constituency =
+                    String(
+                        item.constituency || ""
+                    ).toLowerCase();
+
+
+                const itemRegion =
+                    normalizeRegion(
+                        item.region
+                    );
+
+
+                const matchesSearch =
+                    !search ||
+                    constituency.includes(
+                        search
+                    ) ||
+                    itemRegion.includes(
+                        search
+                    );
+
+
+                const matchesRegion =
+                    !region ||
+                    itemRegion === region;
+
+
+                return (
+                    matchesSearch &&
+                    matchesRegion
+                );
+
+            }
+        );
+
+
+    renderVacancies();
+
+}
+
+
+/* =========================================================
+   RENDER VACANCIES
+========================================================= */
+
+function renderVacancies() {
+
+    const tbody =
+        document.getElementById(
+            "vacancyTableBody"
+        );
+
+
+    const empty =
+        document.getElementById(
+            "emptyState"
+        );
+
+
+    const resultCount =
+        document.getElementById(
+            "resultCount"
+        );
+
+
+    tbody.innerHTML = "";
+
+
+    if (
+        filteredVacancies.length === 0
+    ) {
+
+        empty.style.display =
+            "block";
+
+
+        resultCount.textContent =
+            "Showing 0 vacancies";
+
+
+        return;
+
+    }
+
+
+    empty.style.display =
+        "none";
+
+
+    resultCount.textContent =
+        "Showing " +
+        filteredVacancies.length +
+        " of " +
+        vacantConstituencies.length +
+        " vacancies";
+
+
+    filteredVacancies.forEach(
+        function(item, index) {
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML = `
+
+                <td class="number">
+                    ${String(index + 1).padStart(3, "0")}
+                </td>
+
+                <td class="constituency-name">
+                    ${escapeHTML(item.constituency)}
+                </td>
+
+                <td class="region-name">
+                    ${escapeHTML(item.region || "-")}
+                </td>
+
+                <td>
+                    <span class="vacancy-status">
+                        VACANT
+                    </span>
+                </td>
+
+            `;
+
+
+            tbody.appendChild(row);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+function checkAccess() {
+
+    const input =
+        document.getElementById(
+            "accessPassword"
+        );
+
+
+    const error =
+        document.getElementById(
+            "accessError"
+        );
+
+
+    const password =
+        input.value;
+
+
+    if (
+        password ===
+        VACANCY_ACCESS_PASSWORD
+    ) {
+
+        error.style.display =
+            "none";
+
+
+        document.getElementById(
+            "accessScreen"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "vacancyContent"
+        ).style.display =
+            "block";
+
+
+        /*
+         * Remember access during
+         * this browser session.
+         */
+
+        try {
+
+            sessionStorage.setItem(
+                "ypgVacancyAccess",
+                "granted"
+            );
+
+        } catch (e) {}
+
+
+        loadVacancies();
+
+
+        return;
+
+    }
+
+
+    error.style.display =
+        "block";
+
+
+    input.value = "";
+
+    input.focus();
+
+}
+
+
+/* =========================================================
+   TOGGLE PASSWORD
+========================================================= */
+
+function togglePassword() {
+
+    const input =
+        document.getElementById(
+            "accessPassword"
+        );
+
+
+    const button =
+        document.querySelector(
+            ".show-password"
+        );
+
+
+    if (
+        input.type ===
+        "password"
+    ) {
+
+        input.type =
+            "text";
+
+        button.textContent =
+            "HIDE";
+
+    } else {
+
+        input.type =
+            "password";
+
+        button.textContent =
+            "SHOW";
+
+    }
+
+}
+
+
+/* =========================================================
+   ENTER KEY
+========================================================= */
+
+document
+    .getElementById(
+        "accessPassword"
+    )
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key ===
+                "Enter"
+            ) {
+
+                checkAccess();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+document
+    .getElementById(
+        "vacancySearch"
+    )
+    .addEventListener(
+        "input",
+        filterVacancies
+    );
+
+
+/* =========================================================
+   REGION
+========================================================= */
+
+document
+    .getElementById(
+        "regionFilter"
+    )
+    .addEventListener(
+        "change",
+        filterVacancies
+    );
+
+
+/* =========================================================
+   GENERATED DATE
+========================================================= */
+
+function updateGeneratedDate() {
+
+    const now =
+        new Date();
+
+
+    const formatted =
+        now.toLocaleDateString(
+            "en-GH",
+            {
+                day:
+                    "2-digit",
+
+                month:
+                    "long",
+
+                year:
+                    "numeric"
+            }
+        );
+
+
+    document.getElementById(
+        "generatedDate"
+    ).textContent =
+        formatted;
+
+}
+
+
+/* =========================================================
+   CHECK EXISTING SESSION
+========================================================= */
+
+function checkExistingAccess() {
+
+    let granted =
+        false;
+
+
+    try {
+
+        granted =
+            sessionStorage.getItem(
+                "ypgVacancyAccess"
+            ) ===
+            "granted";
+
+    } catch (error) {
+
+        granted = false;
+
+    }
+
+
+    if (granted) {
+
+        document.getElementById(
+            "accessScreen"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "vacancyContent"
+        ).style.display =
+            "block";
+
+
+        loadVacancies();
+
+    }
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateGeneratedDate();
+
+        checkExistingAccess();
+
+    }
+);
+function printVacancyRelease() {
+
+    const printBody =
+        document.getElementById("printVacancyTableBody");
+
+    if (!printBody) {
+        alert("The official print table could not be found.");
+        return;
+    }
+
+
+    /*
+     * Use the actual vacancy registry.
+     */
+    let vacancies = [];
+
+    if (
+        typeof vacantConstituencies !== "undefined" &&
+        Array.isArray(vacantConstituencies)
+    ) {
+        vacancies = [...vacantConstituencies];
+    }
+
+
+    /*
+     * Safety fallback.
+     */
+    if (
+        vacancies.length === 0 &&
+        typeof getVacantPositions === "function"
+    ) {
+        const result = getVacantPositions();
+
+        if (Array.isArray(result)) {
+            vacancies = [...result];
+        }
+    }
+
+
+    /*
+     * Clear previous print records.
+     */
+    printBody.innerHTML = "";
+
+
+    /*
+     * Sort alphabetically.
+     */
+    vacancies.sort(function(a, b) {
+
+        return String(a.constituency || "")
+            .localeCompare(
+                String(b.constituency || "")
+            );
+
+    });
+
+
+    /*
+     * Generate official table.
+     */
+    vacancies.forEach(function(item, index) {
+
+        const constituency =
+            item.constituency || "-";
+
+        const region =
+            item.region || "-";
+
+
+        const row =
+            document.createElement("tr");
+
+
+        row.innerHTML = `
+
+            <td>
+                ${index + 1}
+            </td>
+
+            <td>
+                ${escapePrintHTML(constituency)}
+            </td>
+
+            <td>
+                ${escapePrintHTML(region)}
+            </td>
+
+        `;
+
+
+        printBody.appendChild(row);
+
+    });
+
+
+    /*
+     * Empty state.
+     */
+    if (vacancies.length === 0) {
+
+        printBody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="3"
+                    style="
+                        text-align:center;
+                        padding:15px;
+                        font-weight:700;
+                    "
+                >
+                    No vacant constituencies recorded.
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+
+    /*
+     * Official date.
+     */
+    const now = new Date();
+
+    const formattedDate =
+        now.toLocaleDateString(
+            "en-GB",
+            {
+                day: "2-digit",
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+
+    const dateElement =
+        document.getElementById(
+            "printReleaseDate"
+        );
+
+    if (dateElement) {
+        dateElement.textContent =
+            formattedDate;
+    }
+
+
+    const generatedElement =
+        document.getElementById(
+            "printGeneratedDate"
+        );
+
+    if (generatedElement) {
+        generatedElement.textContent =
+            formattedDate;
+    }
+
+
+    /*
+     * Print after DOM has updated.
+     */
+    setTimeout(function() {
+
+        window.print();
+
+    }, 200);
+
+}
+/*
+ * Protect printed text from HTML injection.
+ */
+function escapePrintHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+</script>
+<div id="vacancy-print-document">
+
+    <!-- OFFICIAL LETTERHEAD -->
+    <div class="official-letterhead">
+
+        <img
+            src="YPG-LOGO.png"
+            class="official-logo"
+            alt="Youth Parliament Ghana"
+        >
+
+        <h1 class="official-org">
+            YOUTH PARLIAMENT GHANA
+        </h1>
+
+        <div class="official-subtitle">
+            Parliamentary Registry &amp; Nominations Secretariat
+        </div>
+
+        <div class="official-motto">
+            Youth Leadership • Democratic Participation • National Development
+        </div>
+
+    </div>
+
+
+    <!-- DOCUMENT INFORMATION -->
+    <div class="document-meta">
+
+        <div class="document-meta-left">
+
+            <div class="meta-label">
+                Document
+            </div>
+
+            <div class="meta-value">
+                Official Vacancy Release
+            </div>
+
+        </div>
+
+
+        <div class="document-meta-right">
+
+            <div>
+                <span class="meta-label">Date:</span>
+                <span
+                    class="meta-value"
+                    id="printReleaseDate"
+                >
+                    —
+                </span>
+            </div>
+
+            <div>
+                <span class="meta-label">Reference:</span>
+                <span class="meta-value">
+                    YPG/REG/VAC/2026
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TITLE -->
+    <div class="official-document-title">
+        Release of Vacant Parliamentary Constituencies
+    </div>
+
+    <div class="official-document-reference">
+        OFFICIAL CALL FOR EXPRESSIONS OF INTEREST AND NOMINATION
+    </div>
+
+
+    <!-- LETTER -->
+    <div class="official-letter-body">
+
+        <p class="official-recipient">
+            TO ALL INTERESTED AND QUALIFIED PERSONS
+        </p>
+
+
+        <p class="official-opening">
+            NOTICE OF VACANCIES
+        </p>
+
+
+        <p>
+            Youth Parliament Ghana hereby formally announces the
+            release of the Parliamentary Constituencies currently
+            recorded as vacant within the Youth Parliament Ghana
+            Parliamentary Registry.
+        </p>
+
+
+        <p>
+            Interested and qualified persons who wish to be considered
+            for nomination to any of the vacant constituencies listed
+            in this release are invited to express their interest and
+            commence the necessary nomination procedures.
+        </p>
+
+
+        <div class="official-highlight">
+
+            <strong>
+                IMPORTANT:
+            </strong>
+
+            This release constitutes an invitation for interested
+            persons to begin the nomination process. Submission of
+            an expression of interest does not by itself constitute
+            appointment or confirmation of membership. All applicants
+            remain subject to the applicable nomination,
+            verification and approval procedures of Youth Parliament
+            Ghana.
+
+        </div>
+
+
+        <div class="official-vacancy-heading">
+            Vacant Parliamentary Constituencies
+        </div>
+
+
+        <!-- VACANCY TABLE -->
+        <table class="official-vacancy-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        No.
+                    </th>
+
+                    <th>
+                        Vacant Constituency
+                    </th>
+
+                    <th>
+                        Region
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="printVacancyTableBody">
+
+                <!-- Generated automatically -->
+
+            </tbody>
+
+        </table>
+
+
+        <!-- NOMINATION INFORMATION -->
+        <div class="nomination-box">
+
+            <div class="nomination-box-title">
+                Nomination Process
+            </div>
+
+            <p>
+                Persons interested in any of the listed constituencies
+                should contact the designated enquiry contact to
+                obtain information on the necessary nomination steps,
+                requirements and submission procedures.
+            </p>
+
+        </div>
+
+
+        <!-- ENQUIRY -->
+        <div class="official-enquiry">
+
+            <div>
+
+                <div class="official-enquiry-label">
+                    For Enquiries &amp; Nomination Information
+                </div>
+
+                <div class="official-enquiry-name">
+                    HON. MAVIS
+                </div>
+
+            </div>
+
+
+            <div class="official-enquiry-phone">
+                0542809440
+            </div>
+
+        </div>
+
+
+        <!-- DECLARATION -->
+        <div class="official-declaration">
+
+            Youth Parliament Ghana encourages all interested persons
+            to provide accurate information and follow the official
+            nomination process. Applicants are advised to rely only
+            on authorized communication from the appropriate office
+            concerning their nomination.
+
+        </div>
+
+
+        <!-- SIGNATURE -->
+        <div class="official-signature">
+
+            <div class="signature-line-official"></div>
+
+            <div class="signature-name">
+                Youth Parliament Ghana
+            </div>
+
+            <div class="signature-position">
+                Parliamentary Registry &amp; Nominations Secretariat
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="official-print-footer">
+
+        <div class="official-print-footer-left">
+            Youth Parliament Ghana — Official Vacancy Release
+        </div>
+
+        <div class="official-print-footer-right">
+            Generated:
+            <span id="printGeneratedDate">—</span>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
