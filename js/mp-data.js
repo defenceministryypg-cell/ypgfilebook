@@ -10719,6 +10719,126 @@ parliament: "Youth Parliament Ghana",
     linkedin: "#",
     tiktok: "#"
 },
+  {
+    id: "mp213",
+    name: "DONKOR ESSIAM MESHACK",
+    position: "Member of Parliament",
+    constituency: "Twifo Atti-Morkwa",
+    region: "Central",
+    parliament: "Youth Parliament Ghana",
+    status: "active",
+    education: [
+        "University of Mines and Technology (UMaT), Tarkwa – BSc Economics and Industrial Organisation (2025–Present, In Progress)",
+        "Adisadel College, Cape Coast – General Arts, WASSCE (2021–2023)",
+        "Precious Montessori School – Basic Education, BECE (2017–2020)"
+    ],
+    profession: "Economist, Educator and Politician",
+    experience: "Student leadership, public service, teaching and organisational leadership.",
+    biography: "Hon. Donkor Essiam Meshack is a Ghanaian politician, economics scholar, and public servant serving as the Member of Parliament for the Twifo Atti-Morkwa Constituency in the Central Region of Ghana. He hails from Twifo Praso and is currently pursuing a BSc in Economics and Industrial Organisation at the University of Mines and Technology (UMaT), Tarkwa. His academic focus reflects a strong commitment to understanding the economic and industrial drivers of national development. Driven by a vision to contribute meaningfully to Ghana’s economic and industrial progress, Hon. Meshack is committed to advancing research, policy, and organisational leadership for the benefit of his constituents and the nation.",
+    vision: "To contribute meaningfully to Ghana’s economic and industrial progress through research, policy development and organisational leadership.",
+    plans: [
+        "Promote economic awareness and opportunities for young people.",
+        "Encourage education, research and skills development.",
+        "Support initiatives that contribute to community and national development.",
+        "Promote responsible leadership and effective representation.",
+        "Encourage innovation and understanding of economic and industrial development."
+    ],
+    contribution: "Has contributed to student governance, institutional leadership, teaching and community engagement through his various leadership and professional roles.",
+    currentActivities: "Pursuing a BSc in Economics and Industrial Organisation at UMaT while serving as Member of Parliament for Twifo Atti-Morkwa Constituency.",
+    leadershipExperience: [
+        "Senate Chair – Senate Board, UMaT (2026)",
+        "Clerk – Moot Court, UMaT (2026)",
+        "Marshal – Senate Board, UMaT (2025)",
+        "Class Representative – Economics and Industrial Organisation, UMaT (2025–Present)",
+        "Music Director – Christ Apostolic Church (2024–Present)",
+        "Head Boy – Precious Montessori Preparatory School (2018–2020)"
+    ],
+    professionalExperience: [
+        "Teacher – Achievers Preparatory School, Twifo Praso",
+        "Intern – Faith Montessori (12th June 2026 – 10th July 2026)"
+    ],
+    focusAreas: [
+        "Economic Development",
+        "Industrial Development",
+        "Education",
+        "Research and Policy",
+        "Youth Empowerment",
+        "Leadership and Governance"
+    ],
+    slogan: "To be provided",
+    image: "images/donkor-essiam-meshack.jpeg",
+    email: "meshackdonkor97@gmail.com",
+    phone: "+233550387272 / +233534894638",
+    website: "#",
+    facebook: "Kelly Carhtel",
+    twitter: "Kelly_Carhtel",
+    instagram: "kelly_carhtel",
+    linkedin: "#",
+    tiktok: "#"
+},
+{
+    id: "mp214",
+    name: "ABDUL KADIR SALIFU",
+    position: "Youth Member of Parliament (Youth MP)",
+    constituency: "Effiduase-Asokore",
+    region: "Ashanti",
+    parliament: "Youth Parliament Ghana",
+    status: "active",
+    education: [
+        "Takoradi Technical University – BTech Electrical and Electronics Engineering (Year Two, Currently Pursuing)",
+        "Effiduase Senior High Technical School – Applied Electricity, WASSCE (2024)",
+        "Effiduase Islamic Junior High School – Basic Education, BECE (2021)"
+    ],
+    profession: "Electrical and Electronics Engineering Student",
+    experience: "Student leadership, political organisation, youth engagement, community development and electrical engineering studies.",
+    biography: "Hon. Abdul Kadir Salifu hails from Effiduase in the Ashanti Region of Ghana. He is a hardworking, reliable and dedicated individual who is passionate about personal growth, leadership and making a positive impact in society. He values commitment, honesty and responsibility and is motivated to contribute meaningfully to his community and the development of young people. He received his basic education at Effiduase Islamic Junior High School before completing his Senior High School education at Effiduase Senior High Technical School, where he studied Applied Electricity. His interest in Electrical Engineering, particularly power distribution and electrical installation works, inspired him to pursue a Bachelor of Technology in Electrical and Electronics Engineering at Takoradi Technical University, where he is currently a Year Two student. His leadership journey includes serving as an NDC Battalions Organizer, Director of Elections and Branch Organizer for Amalgamated B Branch. He has also contributed to electoral and constituency activities as a polling agent, voter registration representative, and member of the Education Campaign Committee and Constituency Organization Committee in the Effiduase-Asokore Constituency. He has participated in community development activities, including clean-up exercises, volunteering, mosque activities and youth programmes. He remains committed to continuous learning, responsible leadership, youth empowerment and community service.",
+    vision: "To contribute to the development of young people through responsible leadership, technical education, community service and active participation in national development.",
+    plans: [
+        "Encourage youth participation in leadership and community development.",
+        "Promote technical and vocational education among young people.",
+        "Support community clean-up exercises and volunteer initiatives.",
+        "Encourage responsible leadership, teamwork and accountability.",
+        "Promote youth empowerment and opportunities for personal development."
+    ],
+    contribution: "Has participated in community clean-up exercises, volunteering, mosque activities and youth programmes. His leadership experience also includes electoral organisation, voter registration activities and constituency-level engagement.",
+    currentActivities: "Currently pursuing a BTech in Electrical and Electronics Engineering at Takoradi Technical University while serving as a Youth Member of Parliament under Youth Parliament Ghana and Deputy Organizer of TEIN-TTU.",
+    leadershipExperience: [
+        "Youth Member of Parliament – Youth Parliament Ghana",
+        "Deputy Organizer – TEIN-TTU",
+        "NDC Battalions Organizer",
+        "Director of Elections",
+        "Branch Organizer – Amalgamated B Branch",
+        "Polling Agent",
+        "Voter Registration Representative",
+        "Member – Education Campaign Committee, Effiduase-Asokore Constituency",
+        "Member – Constituency Organization Committee, Effiduase-Asokore Constituency",
+        "Group Leader – Effiduase Islamic Junior High School"
+    ],
+    professionalExperience: [
+        "Student – Electrical and Electronics Engineering",
+        "Interest in Electrical Power Distribution",
+        "Interest in Electrical Installation Works"
+    ],
+    focusAreas: [
+        "Youth Empowerment",
+        "Technical Education",
+        "Electrical Engineering",
+        "Community Development",
+        "Leadership Development",
+        "Volunteerism",
+        "Youth Participation"
+    ],
+    slogan: "To be provided",
+    image: "images/abdul-kadir-salifu.jpeg",
+    email: "salifukadir442@gmail.com",
+    phone: "0596375115",
+    website: "#",
+    facebook: "Salifu Abdul Kadir",
+    twitter: "#",
+    instagram: "#",
+    linkedin: "#",
+    tiktok: "#"
+},
 
 
 
